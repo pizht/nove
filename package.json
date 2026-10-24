@@ -26,7 +26,8 @@
     "prisma": "pnpm --filter @nove/api exec prisma",
     "compose": "docker compose --env-file apps/api/.env",
     "skills:check": "pnpm --filter @nove/skills run check",
-    "skills:test": "pnpm --filter @nove/skills run test"
+    "skills:test": "pnpm --filter @nove/skills run test",
+    "check:colors": "node scripts/check-color-tokens.mjs"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

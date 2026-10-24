@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . && node ../../scripts/check-color-tokens.mjs",
     "format": "prettier --write .",
     "preview": "vite preview",
     "api:generate": "pnpm generate:api",
@@ -23,7 +23,8 @@
     "test:e2e:install": "playwright install",
     "test:watch": "vitest",
     "generate:api": "pnpm --dir ../.. generate:api",
-    "generate:client": "orval --config orval.config.ts"
+    "generate:client": "orval --config orval.config.ts",
+    "lint:colors": "node ../../scripts/check-color-tokens.mjs"
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",

@@ -28,6 +28,8 @@ pnpm build:admin
 pnpm docs:build
 ```
 
+`lint:admin` 会额外执行 `scripts/check-color-tokens.mjs`：源码里出现 `#rrggbb` / `rgb()` / `hsl()` 字面量即失败，颜色必须走 `var(--ant-*)`。确有例外时，把具体色值和理由加进该脚本的 `ALLOW` 表，不要绕过检查。
+
 ## 项目文档
 
 完整的架构、模块、开发与部署说明位于 [`docs/developer/admin/`](../../docs/developer/admin/guides/getting-started.md)。本地启动：
