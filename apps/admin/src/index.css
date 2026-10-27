@@ -12,12 +12,35 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /*
+   * 少量强调色作为文字或图表线条时，基础色阶在深色背景下对比度不足。
+   * 这里用应用级变量做一层映射：浅色沿用原色，深色改用 antd 深色算法
+   * 自动提亮的 8 级色阶，避免业务样式各自散落主题判断。
+   */
+  --nove-accent-primary: var(--ant-color-primary);
+  --nove-accent-purple: var(--ant-purple);
+  --nove-accent-cyan: var(--ant-cyan);
+  --nove-accent-geekblue: var(--ant-geekblue);
+  --nove-accent-magenta: var(--ant-magenta);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --nove-accent-primary: var(--ant-color-primary-hover);
+  --nove-accent-purple: var(--ant-purple-8);
+  --nove-accent-cyan: var(--ant-cyan-8);
+  --nove-accent-geekblue: var(--ant-geekblue-8);
+  --nove-accent-magenta: var(--ant-magenta-8);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--ant-color-text);
+  background: var(--ant-color-bg-layout);
 }
 
 /*

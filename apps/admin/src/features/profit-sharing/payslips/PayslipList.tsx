@@ -368,7 +368,7 @@ export const PayslipList: React.FC = () => {
           <Button
             type="link"
             size="small"
-            style={{ color: 'var(--ant-purple)', padding: 0 }}
+            style={{ color: 'var(--nove-accent-purple)', padding: 0 }}
             icon={<PlusCircleOutlined />}
             onClick={() => handleOpenAdjustment({ id: record.memberId, name: record.memberName })}
           >

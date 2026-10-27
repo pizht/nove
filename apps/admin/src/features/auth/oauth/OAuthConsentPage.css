@@ -22,7 +22,7 @@
   overflow: hidden;
   border: 1px solid var(--ant-color-border-secondary);
   border-radius: 24px;
-  background: white;
+  background: var(--ant-color-bg-container);
   box-shadow: var(--ant-box-shadow);
 }
 
@@ -49,7 +49,7 @@
   height: 48px;
   place-items: center;
   border-radius: 14px;
-  color: white;
+  color: var(--ant-color-text-light-solid);
   font-size: 22px;
   background: linear-gradient(135deg, var(--ant-color-primary), var(--ant-cyan-8));
   box-shadow: 0 8px 20px color-mix(in srgb, var(--ant-color-primary) 20%, transparent);
@@ -82,7 +82,7 @@
   padding: 11px 12px;
   border: 1px solid var(--ant-color-primary-border);
   border-radius: 12px;
-  color: var(--ant-color-primary-active);
+  color: var(--nove-accent-primary);
   background: var(--ant-color-bg-elevated);
 }
 
@@ -226,7 +226,7 @@
   overflow: hidden;
   border: 1px solid var(--ant-color-border-secondary);
   border-radius: 14px;
-  background: white;
+  background: var(--ant-color-bg-container);
 }
 
 .oauth-consent__resource-nav {
@@ -278,14 +278,14 @@
 }
 
 .oauth-consent__resource-tab:hover {
-  color: var(--ant-color-primary-active);
+  color: var(--nove-accent-primary);
   background: var(--ant-color-primary-bg);
 }
 
 .oauth-consent__resource-tab[aria-selected='true'] {
-  color: var(--ant-color-primary-active);
+  color: var(--nove-accent-primary);
   border-color: var(--ant-color-primary-border);
-  background: white;
+  background: var(--ant-color-primary-bg);
   box-shadow: 0 1px 4px color-mix(in srgb, var(--ant-color-primary) 10%, transparent);
 }
 
@@ -318,7 +318,7 @@
   min-height: 58px;
   padding: 10px 16px;
   border-bottom: 1px solid var(--ant-color-border-secondary);
-  background: white;
+  background: var(--ant-color-bg-container);
 }
 
 .oauth-consent__permission-content-header > div {
@@ -364,7 +364,7 @@
 }
 
 .oauth-consent__permission:hover {
-  background: white;
+  background: var(--ant-color-fill-tertiary);
 }
 
 .oauth-consent__permission strong,
@@ -410,7 +410,7 @@
   .oauth-consent {
     padding: 0;
     overflow-y: auto;
-    background: white;
+    background: var(--ant-color-bg-container);
   }
 
   .oauth-consent__card {

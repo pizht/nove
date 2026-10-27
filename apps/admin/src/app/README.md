@@ -7,7 +7,8 @@
 - **layout/** - 布局组件（主布局、侧边栏、头部等）
 - **routes/** - 路由配置和路由组件
 - **guards/** - 路由守卫（权限验证、登录状态等）
-- **providers/** - 应用级 Provider（React Query、路由、主题等）
+- **providers/** - 应用级 Provider（React Query、路由等）
+- **theme/** - 亮暗主题状态、Ant Design 主题配置与切换按钮
 - **config/** - 应用配置文件
 
 ## 原则

@@ -37,7 +37,7 @@
 .drive-detail-icon.is-audio {
   background: linear-gradient(135deg, var(--ant-geekblue-1) 0%, var(--ant-geekblue-2) 100%);
   /* 装饰性靛蓝色系，与同组渐变一起留在阶段二 */
-  color: var(--ant-geekblue);
+  color: var(--nove-accent-geekblue);
   border: 1px solid var(--ant-geekblue-2);
 }
 

@@ -188,7 +188,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
             {formatDateTime(order.benefitStart)}
           </Descriptions.Item>
           <Descriptions.Item label="权益结束时间" span={2}>
-            <Text strong style={{ color: 'var(--ant-color-primary-active)' }}>
+            <Text strong style={{ color: 'var(--nove-accent-primary)' }}>
               {formatDateTime(order.benefitEnd)}
             </Text>
           </Descriptions.Item>
@@ -339,7 +339,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
                       <Text type="secondary">到期日变动：</Text>
                       <Text delete>{formatDateTime(item.beforeEnd)}</Text>
                       <span style={{ margin: '0 6px' }}>➔</span>
-                      <Text strong style={{ color: 'var(--ant-color-primary-active)' }}>
+                      <Text strong style={{ color: 'var(--nove-accent-primary)' }}>
                         {formatDateTime(item.afterEnd)}
                       </Text>
                     </div>

@@ -29,6 +29,8 @@ main.tsx → app → features → shared
 
 `AdminLayout` 使用同一份 `RouteConfig` 生成侧边栏和面包屑，因此页面路径、菜单标题和访问权限应在 feature 的路由文件中维护，不另建重复菜单表。
 
+`ThemeProvider` 包在路由外层：它只提供“浅色 / 深色”两种显式模式，不读取系统偏好。当前模式持久化在 `localStorage` 的 `nove-admin:theme-mode`，并同步到 `<html data-theme>`、`color-scheme` 和 Ant Design 的 CSS 变量类。顶栏的主题按钮是切换入口；静态 `message` / `Modal.confirm` 通过 `ConfigProvider.config` 同步主题。业务样式优先使用 `--ant-*` 变量，需要随模式翻转的少量强调色使用 `--nove-accent-*`。
+
 ## 技术栈职责
 
 - React 19：组件与界面组合。

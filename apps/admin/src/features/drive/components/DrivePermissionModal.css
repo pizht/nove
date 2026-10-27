@@ -160,7 +160,7 @@
 
 .drive-perm-grant-avatar.is-user {
   background: var(--ant-color-primary-bg);
-  color: var(--ant-blue-5);
+  color: var(--nove-accent-primary);
 }
 
 .drive-perm-grant-avatar.is-role {
@@ -175,7 +175,7 @@
 
 .drive-perm-grant-avatar.is-org {
   background: var(--ant-color-primary-bg);
-  color: var(--ant-purple);
+  color: var(--nove-accent-purple);
 }
 
 .drive-perm-grant-info {

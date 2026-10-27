@@ -8,7 +8,7 @@
 .report-subject-summary > .ant-avatar {
   flex: 0 0 auto;
   background: var(--ant-color-primary-bg);
-  color: var(--ant-color-primary-active);
+  color: var(--nove-accent-primary);
   font-weight: 600;
 }
 
@@ -19,7 +19,7 @@
 
 .report-subject-summary[data-target-type='PROJECT'] > .ant-avatar {
   background: linear-gradient(135deg, var(--ant-purple-1), var(--ant-blue-1));
-  color: var(--ant-purple);
+  color: var(--nove-accent-purple);
 }
 
 .report-subject-summary[data-target-type='ORGANIZATION'] > .ant-avatar {

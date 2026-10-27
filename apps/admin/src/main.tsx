@@ -12,7 +12,11 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { AppProviders } from './app/providers/AppProviders';
+import { applyThemeMode, readStoredThemeMode } from './app/theme';
 import { useAuthStore } from './features/auth/model/authStore';
+
+// 在认证初始化前先应用主题，避免已选择深色模式的用户看到浅色闪屏。
+applyThemeMode(readStoredThemeMode());
 
 const initializeAuth = async () => {
   await useAuthStore.getState().initialize();

@@ -239,8 +239,8 @@ export const ProfitDashboard: React.FC = () => {
                     }
                     value={memberSeries.length}
                     suffix="人"
-                    prefix={<TeamOutlined style={{ color: 'var(--ant-purple)' }} />}
-                    valueStyle={{ color: 'var(--ant-purple)', fontWeight: 700 }}
+                    prefix={<TeamOutlined style={{ color: 'var(--nove-accent-purple)' }} />}
+                    valueStyle={{ color: 'var(--nove-accent-purple)', fontWeight: 700 }}
                   />
                   <div className="profit-kpi-subtext">共包含 {members.length} 名在册核算成员</div>
                 </Card>
@@ -307,7 +307,7 @@ export const ProfitDashboard: React.FC = () => {
                     value={overall.totalPendingAmount / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: 'var(--ant-purple)', fontWeight: 700 }}
+                    valueStyle={{ color: 'var(--nove-accent-purple)', fontWeight: 700 }}
                   />
                   <div className="profit-kpi-subtext">
                     已结清发放: ¥{(overall.totalSettledAmount / 100).toFixed(2)}

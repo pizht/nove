@@ -179,7 +179,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                   value={summary.totalBaseSalaryAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: 'var(--ant-purple)', fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ color: 'var(--nove-accent-purple)', fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -308,8 +308,8 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                   }
                   value={summary.totalMembers}
                   suffix="人"
-                  prefix={<TeamOutlined style={{ color: 'var(--ant-purple)' }} />}
-                  valueStyle={{ color: 'var(--ant-purple)', fontWeight: 700 }}
+                  prefix={<TeamOutlined style={{ color: 'var(--nove-accent-purple)' }} />}
+                  valueStyle={{ color: 'var(--nove-accent-purple)', fontWeight: 700 }}
                 />
                 <div className="profit-kpi-subtext">当期产生薪资记录的成员</div>
               </Card>
@@ -344,8 +344,8 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
     'var(--ant-color-primary)',
     'var(--ant-color-success)',
     'var(--ant-color-warning)',
-    'var(--ant-purple)',
-    'var(--ant-cyan)',
+    'var(--nove-accent-purple)',
+    'var(--nove-accent-cyan)',
   ];
                   const percent =
                     item.percent ??

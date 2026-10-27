@@ -118,10 +118,10 @@
 
 .project-primary-cell-avatar:not(.ant-avatar-image) {
   /* 装饰性靛蓝色系，与同组渐变一起留在阶段二 */
-  color: var(--ant-geekblue);
+  color: var(--nove-accent-geekblue);
   background: linear-gradient(135deg, var(--ant-purple-1) 0%, var(--ant-blue-1) 58%, var(--ant-cyan-1) 100%);
   border: 1px solid var(--ant-geekblue-2);
-  box-shadow: 0 2px 6px color-mix(in srgb, var(--ant-geekblue) 10%, transparent);
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--nove-accent-geekblue) 10%, transparent);
 }
 
 .project-primary-cell-content {

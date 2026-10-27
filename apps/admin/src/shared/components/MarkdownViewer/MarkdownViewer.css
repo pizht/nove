@@ -88,7 +88,7 @@
   padding: 2px 6px;
   border-radius: 4px;
   background: var(--ant-color-fill-tertiary);
-  color: var(--ant-magenta);
+  color: var(--nove-accent-magenta);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.9em;
 }

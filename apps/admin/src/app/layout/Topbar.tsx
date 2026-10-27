@@ -22,6 +22,7 @@ import {
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../shared/hooks/useAuth';
+import { ThemeToggle } from '../theme';
 import './Topbar.css';
 
 const { Header } = Layout;
@@ -102,7 +103,17 @@ export function Topbar({ collapsed, sidebarWidth }: TopbarProps) {
           Nove System
         </span>
       </Link>
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', padding: '0 24px' }}>
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          gap: 8,
+          padding: '0 24px',
+        }}
+      >
+        <ThemeToggle />
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
           <Space style={{ cursor: 'pointer' }}>
             <Avatar src={user?.avatar} icon={<UserOutlined />} />

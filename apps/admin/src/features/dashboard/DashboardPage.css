@@ -148,7 +148,7 @@
 }
 
 .dashboard-stat-card:hover .dashboard-stat-card-value {
-  color: var(--ant-geekblue);
+  color: var(--nove-accent-geekblue);
 }
 
 .dashboard-stat-card-label {
