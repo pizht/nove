@@ -740,7 +740,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
       <Form.List name="modules">
         {(fields, { add, remove }) => (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
-            <div style={{ fontWeight: 600, fontSize: 16, color: token.colorText }}>
+            <div style={{ fontWeight: 600, fontSize: 16 }}>
               {ruleType === 'FIXED_MONTHLY' ? '月度固定分账款项列表' : '各分润模块配置'}
             </div>
             {fields.map(({ key, name, ...restField }) => {
@@ -754,7 +754,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                   title={
                     ruleType === 'FIXED_MONTHLY' ? (
                       <Space size="small">
-                        <span style={{ fontWeight: 600, color: token.colorText }}>
+                        <span style={{ fontWeight: 600 }}>
                           款项配置 {name + 1}
                         </span>
                         <Tag
@@ -785,7 +785,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                       </Space>
                     ) : (
                       <Space size="small">
-                        <span style={{ fontWeight: 600, color: token.colorText }}>
+                        <span style={{ fontWeight: 600 }}>
                           模块配置 {name + 1}
                         </span>
                         {currentMod.name && (

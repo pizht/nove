@@ -185,7 +185,7 @@ export const RuleList: React.FC = () => {
 
         return (
           <Space direction="vertical" size={2}>
-            <span style={{ fontWeight: 500, color: token.colorText }}>{record.name}</span>
+            <span style={{ fontWeight: 500 }}>{record.name}</span>
             <Space size={4} wrap>
               {isFixed ? (
                 <Tag color="purple">月度固定薪资/津贴</Tag>

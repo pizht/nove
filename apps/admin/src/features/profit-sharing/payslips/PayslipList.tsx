@@ -182,7 +182,7 @@ export const PayslipList: React.FC = () => {
       width: 120,
       render: (_, record: PayslipSummaryItem) => (
         <div>
-          <div style={{ fontWeight: 600, color: token.colorText }}>{record.memberName}</div>
+          <div style={{ fontWeight: 600 }}>{record.memberName}</div>
           <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
             {record.departmentName || '未分配部门'}
           </div>
@@ -415,7 +415,7 @@ export const PayslipList: React.FC = () => {
         >
           {/* 左侧：标题、月份选择与实时财务统计 */}
           <Space size="middle" align="center" style={{ flexWrap: 'nowrap', minWidth: 0 }}>
-            <span style={{ fontWeight: 700, fontSize: 16, color: token.colorText, whiteSpace: 'nowrap' }}>
+            <span style={{ fontWeight: 700, fontSize: 16, whiteSpace: 'nowrap' }}>
               工资条台账
             </span>
             <DatePicker

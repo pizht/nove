@@ -224,7 +224,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                 opacity: isCurrentlyCompared ? 1 : 0.25,
               }}
             />
-            <span style={{ fontWeight: 600, color: token.colorText }}>{r.memberName}</span>
+            <span style={{ fontWeight: 600 }}>{r.memberName}</span>
             {isCurrentlyCompared && (
               <Tag color="orange" style={{ fontSize: 10, lineHeight: '18px', padding: '0 4px' }}>
                 对比中
@@ -311,7 +311,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
       >
         {/* 左侧：智能预设分流与自选设置 */}
         <Space size="middle" align="center" wrap>
-          <span style={{ fontWeight: 600, color: token.colorText, fontSize: 13 }}>对比范围：</span>
+          <span style={{ fontWeight: 600, fontSize: 13 }}>对比范围：</span>
           <Segmented
             value={scopePreset}
             onChange={handlePresetChange}
@@ -365,7 +365,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                         onChange={() => handleToggleMember(m.memberId)}
                         style={{ margin: 0, padding: '4px 6px', borderRadius: 4 }}
                       >
-                        <span style={{ fontSize: 12, fontWeight: 500, color: token.colorText }}>
+                        <span style={{ fontSize: 12, fontWeight: 500 }}>
                           {m.memberName}
                         </span>
                         <span style={{ fontSize: 11, color: token.colorTextTertiary, marginLeft: 4 }}>
@@ -459,7 +459,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
         title={
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Space size="middle">
-              <span style={{ fontWeight: 600, color: token.colorText }}>
+              <span style={{ fontWeight: 600 }}>
                 {chartSubMode === 'LINES'
                   ? `核心成员月度实发薪资多曲线对比走势 (${activeSeries.length} 位对比中)`
                   : `核心成员周期内累计实发薪资天梯排行榜 (${activeSeries.length} 位对比中)`}
@@ -678,7 +678,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                           <span style={{ color: token.colorTextSecondary }}>{member.memberName}</span>
                         </span>
                         <span
-                          style={{ fontFamily: 'monospace', fontWeight: 600, color: token.colorText }}
+                          style={{ fontFamily: 'monospace', fontWeight: 600 }}
                         >
                           ¥{(amount / 100).toFixed(2)}
                         </span>
@@ -729,7 +729,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                   >
                     <Space size="middle">
                       <span className={`profit-rank-badge ${rankClass}`}>{idx + 1}</span>
-                      <span style={{ fontWeight: 600, color: token.colorText }}>{s.memberName}</span>
+                      <span style={{ fontWeight: 600 }}>{s.memberName}</span>
                       <Tag color="geekblue">{s.memberRole || '员工'}</Tag>
                       {s.departmentName && (
                         <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>{s.departmentName}</span>
@@ -792,7 +792,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
             }}
           >
             <Space size="middle">
-              <span style={{ fontWeight: 600, color: token.colorText }}>
+              <span style={{ fontWeight: 600 }}>
                 全员各月实发薪资横向对比明细表
               </span>
               <span style={{ fontSize: 12, color: token.colorTextTertiary }}>

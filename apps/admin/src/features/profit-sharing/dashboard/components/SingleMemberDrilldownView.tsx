@@ -209,7 +209,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       {/* 顶部个人控制卡片 */}
       <div className="profit-toolbar-card">
         <Space size="middle" wrap>
-          <span style={{ fontWeight: 600, color: token.colorText, fontSize: 13 }}>聚焦透视员工：</span>
+          <span style={{ fontWeight: 600, fontSize: 13 }}>聚焦透视员工：</span>
           <Select
             showSearch
             value={selectedMemberId}
@@ -275,7 +275,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               <div
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
               >
-                <span style={{ fontWeight: 600, color: token.colorText }}>
+                <span style={{ fontWeight: 600 }}>
                   {chartMode === 'STACKED'
                     ? `${selectedMember?.name || '员工'} · 各月薪资板块构成堆叠柱状图`
                     : `${selectedMember?.name || '员工'} · 过往月份实发总薪酬走势折线图`}
@@ -570,7 +570,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <PieChartOutlined style={{ color: token.purple }} />
-                <span style={{ fontWeight: 600, color: token.colorText }}>
+                <span style={{ fontWeight: 600 }}>
                   {selectedMember?.name || '该员工'} · 薪资结构分布
                 </span>
               </div>
@@ -686,7 +686,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       <Card
         title={
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontWeight: 600, color: token.colorText }}>
+            <span style={{ fontWeight: 600 }}>
               {selectedMember?.name || '该员工'} · 过往月份薪资明细台账
             </span>
             <span style={{ fontSize: 12, color: token.colorTextTertiary }}>

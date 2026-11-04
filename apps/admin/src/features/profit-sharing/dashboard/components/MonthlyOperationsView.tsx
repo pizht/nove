@@ -107,7 +107,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
       <div className="profit-toolbar-card">
         <Space size="middle" align="center">
           <CalendarOutlined style={{ color: token.colorPrimary }} />
-          <span style={{ fontWeight: 600, color: token.colorText, fontSize: 13 }}>核算账期选择：</span>
+          <span style={{ fontWeight: 600, fontSize: 13 }}>核算账期选择：</span>
           <Tag color={selectedMonth === 'ALL' ? 'blue' : 'cyan'}>{periodDisplay}</Tag>
         </Space>
 
@@ -328,7 +328,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <AppstoreOutlined style={{ color: token.colorPrimary }} />
-                <span style={{ fontWeight: 600, color: token.colorText }}>
+                <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 各分润业务模块金额占比
                 </span>
               </div>
@@ -372,7 +372,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                         <Space size="middle">
                           <span style={{ color: token.colorTextTertiary, fontWeight: 500 }}>{percent}%</span>
                           <span
-                            style={{ fontWeight: 700, color: token.colorText, fontFamily: 'monospace' }}
+                            style={{ fontWeight: 700, fontFamily: 'monospace' }}
                           >
                             ¥{' '}
                             {Number(item.amount).toLocaleString('zh-CN', {
@@ -402,7 +402,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <TrophyOutlined style={{ color: token.colorWarning }} />
-                <span style={{ fontWeight: 600, color: token.colorText }}>
+                <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 成员创收排行榜 TOP 5
                 </span>
               </div>
@@ -455,7 +455,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                         <Space size="middle">
                           <span className={`profit-rank-badge ${rankClass}`}>{index + 1}</span>
                           <div>
-                            <div style={{ fontWeight: 600, color: token.colorText, fontSize: 13 }}>
+                            <div style={{ fontWeight: 600, fontSize: 13 }}>
                               {item.name || '未分配人员'}
                             </div>
                             <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
