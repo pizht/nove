@@ -106,7 +106,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
       {/* 账期月份选择控制台（作为独立卡片板块拆分呈现，与其他板块工具栏保持一致） */}
       <div className="profit-toolbar-card">
         <Space size="middle" align="center">
-          <CalendarOutlined style={{ color: token.colorPrimary }} />
+          <CalendarOutlined />
           <span style={{ fontWeight: 600, fontSize: 13 }}>核算账期选择：</span>
           <Tag color={selectedMonth === 'ALL' ? 'blue' : 'cyan'}>{periodDisplay}</Tag>
         </Space>
@@ -159,14 +159,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       应发分润 / 总薪酬
                     </span>
                   }
                   value={summary.totalGrossAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorPrimary, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -174,14 +174,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       固定底薪 / 课酬
                     </span>
                   }
                   value={summary.totalBaseSalaryAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.purple, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -189,14 +189,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       订单提成总额
                     </span>
                   }
                   value={summary.totalCommissionAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorSuccess, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -204,14 +204,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       各类奖金总额
                     </span>
                   }
                   value={summary.totalBonusAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorWarning, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -223,14 +223,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               >
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       福利津贴补贴
                     </span>
                   }
                   value={summary.totalSubsidyAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.cyan7, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -238,14 +238,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-red">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       各项扣减总额
                     </span>
                   }
                   value={summary.totalDeductionAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorError, fontWeight: 700, fontSize: 18 }}
+                  valueStyle={{ fontWeight: 700, fontSize: 18 }}
                 />
               </Card>
             </Col>
@@ -257,14 +257,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       已发放 / 已结清金额
                     </span>
                   }
                   value={summary.totalSettledAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                  valueStyle={{ fontWeight: 700 }}
                 />
                 <div className="profit-kpi-subtext">财务已划转完成</div>
               </Card>
@@ -273,14 +273,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       待发放 / 待结算金额
                     </span>
                   }
                   value={summary.totalPendingAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                  valueStyle={{ fontWeight: 700 }}
                 />
                 <div className="profit-kpi-subtext">等待批量发薪结算</div>
               </Card>
@@ -289,13 +289,13 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       处理分润订单数
                     </span>
                   }
                   value={stats.totalOrders}
-                  prefix={<ProfileOutlined style={{ color: token.colorPrimary }} />}
-                  valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                  prefix={<ProfileOutlined />}
+                  valueStyle={{ fontWeight: 700 }}
                 />
                 <div className="profit-kpi-subtext">产生分润收益的业务订单</div>
               </Card>
@@ -304,14 +304,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{ fontSize: 12, fontWeight: 500 }}>
                       参与核算员工数
                     </span>
                   }
                   value={summary.totalMembers}
                   suffix="人"
-                  prefix={<TeamOutlined style={{ color: token.purple }} />}
-                  valueStyle={{ color: token.purple, fontWeight: 700 }}
+                  prefix={<TeamOutlined />}
+                  valueStyle={{ fontWeight: 700 }}
                 />
                 <div className="profit-kpi-subtext">当期产生薪资记录的成员</div>
               </Card>
@@ -327,7 +327,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           <Card
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <AppstoreOutlined style={{ color: token.colorPrimary }} />
+                <AppstoreOutlined />
                 <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 各分润业务模块金额占比
                 </span>
@@ -366,11 +366,11 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                           fontSize: 12,
                         }}
                       >
-                        <span style={{ fontWeight: 600, color: token.colorTextSecondary }}>
+                        <span style={{ fontWeight: 600 }}>
                           {item.name || '分润模块'}
                         </span>
                         <Space size="middle">
-                          <span style={{ color: token.colorTextTertiary, fontWeight: 500 }}>{percent}%</span>
+                          <span style={{ fontWeight: 500 }}>{percent}%</span>
                           <span
                             style={{ fontWeight: 700, fontFamily: 'monospace' }}
                           >
@@ -401,7 +401,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           <Card
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <TrophyOutlined style={{ color: token.colorWarning }} />
+                <TrophyOutlined />
                 <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 成员创收排行榜 TOP 5
                 </span>
@@ -458,14 +458,14 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                             <div style={{ fontWeight: 600, fontSize: 13 }}>
                               {item.name || '未分配人员'}
                             </div>
-                            <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
+                            <div style={{ fontSize: 12 }}>
                               岗位角色：{item.role || '成员'}
                             </div>
                           </div>
                         </Space>
 
                         <div style={{ textAlign: 'right', fontFamily: 'monospace' }}>
-                          <div style={{ fontSize: 15, fontWeight: 700, color: token.colorPrimary }}>
+                          <div style={{ fontSize: 15, fontWeight: 700 }}>
                             ¥{' '}
                             {Number(item.amount).toLocaleString('zh-CN', {
                               minimumFractionDigits: 2,

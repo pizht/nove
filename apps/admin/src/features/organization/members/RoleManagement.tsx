@@ -20,7 +20,6 @@ import Tooltip from 'antd/es/tooltip';
 import Typography from 'antd/es/typography';
 import type { MenuProps } from 'antd/es/menu';
 import type { TableProps } from 'antd/es/table';
-import theme from 'antd/es/theme';
 import {
   DeleteOutlined,
   EditOutlined,
@@ -193,7 +192,6 @@ function downloadCsv(filename: string, rows: string[][]) {
 }
 
 export function RoleManagement() {
-  const { token } = theme.useToken();
   const { user } = useAuth();
   const queryClient = useQueryClient();
   const currentOrgId = user?.currentOrgId;
@@ -1245,7 +1243,7 @@ export function RoleManagement() {
                                     </Tag>
                                   </div>
                                   <div style={{ marginTop: 4, paddingLeft: 24 }}>
-                                    <Text style={{ fontSize: 13, color: token.colorPrimary }}>
+                                    <Text style={{ fontSize: 13 }}>
                                       业务释义：{explanation}
                                     </Text>
                                   </div>

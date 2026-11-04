@@ -109,7 +109,7 @@ export function DataRulePreviewModal({ open, onClose, rule }: DataRulePreviewMod
             </Tag>
           </Descriptions.Item>
           <Descriptions.Item label="业务释义" span={2}>
-            <Text strong style={{ color: token.colorPrimary }}>
+            <Text strong>
               {explanation}
             </Text>
           </Descriptions.Item>
@@ -186,13 +186,13 @@ export function DataRulePreviewModal({ open, onClose, rule }: DataRulePreviewMod
               }}
             >
               <Space size="small">
-                <PlayCircleOutlined style={{ color: token.colorSuccess }} />
+                <PlayCircleOutlined />
                 <Text strong>最终生效的数据库查询条件:</Text>
               </Space>
               <Button
                 size="small"
                 type="text"
-                icon={copied ? <CheckOutlined style={{ color: token.colorSuccess }} /> : <CopyOutlined />}
+                icon={copied ? <CheckOutlined /> : <CopyOutlined />}
                 onClick={handleCopy}
               >
                 {copied ? '已复制' : '复制'}

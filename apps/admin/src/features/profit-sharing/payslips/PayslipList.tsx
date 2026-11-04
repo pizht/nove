@@ -183,7 +183,7 @@ export const PayslipList: React.FC = () => {
       render: (_, record: PayslipSummaryItem) => (
         <div>
           <div style={{ fontWeight: 600 }}>{record.memberName}</div>
-          <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
+          <div style={{ fontSize: 12 }}>
             {record.departmentName || '未分配部门'}
           </div>
         </div>
@@ -370,7 +370,7 @@ export const PayslipList: React.FC = () => {
           <Button
             type="link"
             size="small"
-            style={{ color: token.purple, padding: 0 }}
+            style={{ padding: 0 }}
             icon={<PlusCircleOutlined />}
             onClick={() => handleOpenAdjustment({ id: record.memberId, name: record.memberName })}
           >
@@ -389,7 +389,7 @@ export const PayslipList: React.FC = () => {
               <Button
                 type="link"
                 size="small"
-                style={{ color: token.colorSuccess, padding: 0 }}
+                style={{ padding: 0 }}
                 icon={<DollarOutlined />}
               >
                 发薪
@@ -427,9 +427,9 @@ export const PayslipList: React.FC = () => {
               allowClear={false}
               style={{ width: 115, flexShrink: 0 }}
             />
-            <span style={{ fontSize: 13, color: token.colorTextSecondary, whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 13, whiteSpace: 'nowrap' }}>
               共 <strong>{items.length}</strong> 人 · 应发合计{' '}
-              <strong style={{ color: token.colorPrimary, fontFamily: 'monospace' }}>
+              <strong style={{ fontFamily: 'monospace' }}>
                 ¥{((summary?.totalGrossAmount || 0) / 100).toFixed(2)}
               </strong>{' '}
               (已发{' '}

@@ -2,7 +2,6 @@ import Button from 'antd/es/button';
 import Popover from 'antd/es/popover';
 import Space from 'antd/es/space';
 import Tag from 'antd/es/tag';
-import theme from 'antd/es/theme';
 
 interface ScopeSummaryProps {
   scopes?: string[];
@@ -18,8 +17,7 @@ function groupScopes(scopes: string[]) {
 }
 
 export function ScopeSummary({ scopes = [] }: ScopeSummaryProps) {
-  const { token } = theme.useToken();
-  if (scopes.length === 0) return <span style={{ color: token.colorTextTertiary }}>未配置</span>;
+  if (scopes.length === 0) return <span>未配置</span>;
 
   if (scopes.length <= 2) {
     return (
@@ -42,7 +40,7 @@ export function ScopeSummary({ scopes = [] }: ScopeSummaryProps) {
         <div key={group} style={{ marginBottom: 12 }}>
           <div style={{ marginBottom: 6, fontWeight: 600 }}>
             {group}
-            <span style={{ marginLeft: 6, color: token.colorTextTertiary, fontWeight: 400 }}>
+            <span style={{ marginLeft: 6, fontWeight: 400 }}>
               {groupScopes.length} 项
             </span>
           </div>
@@ -70,7 +68,7 @@ export function ScopeSummary({ scopes = [] }: ScopeSummaryProps) {
           查看 {scopes.length} 项权限
         </Button>
       </Popover>
-      <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>{groupEntries.length} 个分组</span>
+      <span style={{ fontSize: 12 }}>{groupEntries.length} 个分组</span>
     </Space>
   );
 }

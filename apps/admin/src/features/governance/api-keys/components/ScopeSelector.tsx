@@ -90,11 +90,11 @@ export function ScopeSelector({ value = [], onChange, options }: ScopeSelectorPr
 
       <div style={{ padding: '8px 12px', borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
         <Space size={6}>
-          <span style={{ color: token.colorTextSecondary }}>已选择</span>
+          <span>已选择</span>
           <Tag color="blue" style={{ marginInlineEnd: 0 }}>
             {value.length}
           </Tag>
-          <span style={{ color: token.colorTextTertiary }}>/ {availableScopes.length} 项</span>
+          <span>/ {availableScopes.length} 项</span>
         </Space>
       </div>
 
@@ -111,7 +111,7 @@ export function ScopeSelector({ value = [], onChange, options }: ScopeSelectorPr
                 style={{ fontWeight: 600, marginBottom: 8 }}
               >
                 {group}
-                <span style={{ marginLeft: 6, color: token.colorTextTertiary, fontWeight: 400 }}>
+                <span style={{ marginLeft: 6, fontWeight: 400 }}>
                   {selectedCount}/{scopes.length}
                 </span>
               </Checkbox>
@@ -138,7 +138,7 @@ export function ScopeSelector({ value = [], onChange, options }: ScopeSelectorPr
         })}
 
         {visibleScopes.length === 0 && (
-          <div style={{ padding: 24, textAlign: 'center', color: token.colorTextTertiary }}>没有匹配的权限</div>
+          <div style={{ padding: 24, textAlign: 'center' }}>没有匹配的权限</div>
         )}
       </div>
     </div>

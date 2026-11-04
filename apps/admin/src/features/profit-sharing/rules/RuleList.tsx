@@ -20,7 +20,6 @@ import {
   SyncOutlined,
 } from '@ant-design/icons';
 import { type ColumnsType } from 'antd/es/table';
-import theme from 'antd/es/theme';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { ruleApi } from './api/ruleApi';
@@ -31,7 +30,6 @@ import type { ProfitSharingModule, ProfitSharingRule } from './types';
 import './RuleList.css';
 
 export const RuleList: React.FC = () => {
-  const { token } = theme.useToken();
   const {
     data: rules,
     isLoading,
@@ -226,7 +224,7 @@ export const RuleList: React.FC = () => {
           return (
             <Space size="small">
               <Tag color="purple">长期有效</Tag>
-              <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+              <span style={{ fontSize: 12 }}>
                 自 {start.format('YYYY-MM-DD')} 起
               </span>
             </Space>
@@ -237,13 +235,13 @@ export const RuleList: React.FC = () => {
           return (
             <Space size="small">
               <Tag color="cyan">{start.format('YYYY年MM月')}</Tag>
-              <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>整月</span>
+              <span style={{ fontSize: 12 }}>整月</span>
             </Space>
           );
         }
 
         return (
-          <span style={{ color: token.colorTextSecondary }}>
+          <span>
             {start.format('YYYY-MM-DD')} ~ {end.format('YYYY-MM-DD')}
           </span>
         );
@@ -476,7 +474,7 @@ export const RuleList: React.FC = () => {
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
               >
                 <span>
-                  已选择 <strong style={{ color: token.colorPrimary }}>{selectedRowKeys.length}</strong>{' '}
+                  已选择 <strong>{selectedRowKeys.length}</strong>{' '}
                   条规则
                 </span>
                 <Space>

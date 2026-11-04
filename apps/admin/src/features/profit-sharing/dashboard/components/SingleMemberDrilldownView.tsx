@@ -118,7 +118,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       dataIndex: 'baseSalaryAmount',
       key: 'baseSalaryAmount',
       render: (val: number) => (
-        <span style={{ color: token.purple, fontWeight: 500 }}>¥{(val / 100).toFixed(2)}</span>
+        <span style={{ fontWeight: 500 }}>¥{(val / 100).toFixed(2)}</span>
       ),
     },
     {
@@ -126,7 +126,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       dataIndex: 'commissionAmount',
       key: 'commissionAmount',
       render: (val: number) => (
-        <span style={{ color: token.colorSuccess, fontWeight: 500 }}>¥{(val / 100).toFixed(2)}</span>
+        <span style={{ fontWeight: 500 }}>¥{(val / 100).toFixed(2)}</span>
       ),
     },
     {
@@ -135,9 +135,9 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       key: 'bonusAmount',
       render: (val: number) =>
         val > 0 ? (
-          <span style={{ color: token.colorWarning, fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
+          <span style={{ fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -146,9 +146,9 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       key: 'subsidyAmount',
       render: (val: number) =>
         val > 0 ? (
-          <span style={{ color: token.cyan, fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
+          <span style={{ fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -157,9 +157,9 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       key: 'deductionAmount',
       render: (val: number) =>
         val > 0 ? (
-          <span style={{ color: token.colorError, fontWeight: 500 }}>-¥{(val / 100).toFixed(2)}</span>
+          <span style={{ fontWeight: 500 }}>-¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -167,7 +167,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       dataIndex: 'totalGrossAmount',
       key: 'totalGrossAmount',
       render: (val: number) => (
-        <span style={{ color: token.colorPrimary, fontWeight: 700, fontFamily: 'monospace', fontSize: 14 }}>
+        <span style={{ fontWeight: 700, fontFamily: 'monospace', fontSize: 14 }}>
           ¥{(val / 100).toFixed(2)}
         </span>
       ),
@@ -177,13 +177,13 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       key: 'split',
       render: (_: unknown, r: HistoricalMonthPoint) => (
         <div style={{ fontSize: 12 }}>
-          <div style={{ color: token.colorTextSecondary }}>已发: ¥{(r.settledAmount / 100).toFixed(2)}</div>
+          <div>已发: ¥{(r.settledAmount / 100).toFixed(2)}</div>
           {r.pendingAmount > 0 ? (
-            <div style={{ color: token.colorWarning, fontWeight: 600 }}>
+            <div style={{ fontWeight: 600 }}>
               待发: ¥{(r.pendingAmount / 100).toFixed(2)}
             </div>
           ) : (
-            <div style={{ color: token.colorSuccess }}>已结清</div>
+            <div>已结清</div>
           )}
         </div>
       ),
@@ -231,7 +231,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                 {selectedMember.role || '员工'}
               </Tag>
               {selectedMember.department && (
-                <span style={{ fontSize: 12, color: token.colorTextSecondary }}>
+                <span style={{ fontSize: 12 }}>
                   部门：{selectedMember.department}
                 </span>
               )}
@@ -241,7 +241,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
 
         <Space size="middle" wrap>
           <Space size="small">
-            <span style={{ fontSize: 12, color: token.colorTextSecondary }}>统计周期：</span>
+            <span style={{ fontSize: 12 }}>统计周期：</span>
             <Segmented
               size="small"
               value={monthsCount}
@@ -509,37 +509,37 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                   <div className="profit-chart-tooltip">
                     <div className="profit-tooltip-header">
                       <span>{hoveredMonth.month} 工资账期</span>
-                      <span style={{ color: token.colorPrimary, fontFamily: 'monospace' }}>
+                      <span style={{ fontFamily: 'monospace' }}>
                         实发: ¥{(hoveredMonth.totalGrossAmount / 100).toFixed(2)}
                       </span>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                       <div className="profit-tooltip-row">
-                        <span style={{ color: token.purple }}>● 固定底薪/课酬:</span>
+                        <span>● 固定底薪/课酬:</span>
                         <span style={{ fontFamily: 'monospace' }}>
                           ¥{(hoveredMonth.baseSalaryAmount / 100).toFixed(2)}
                         </span>
                       </div>
                       <div className="profit-tooltip-row">
-                        <span style={{ color: token.colorSuccess }}>● 订单提成:</span>
+                        <span>● 订单提成:</span>
                         <span style={{ fontFamily: 'monospace' }}>
                           ¥{(hoveredMonth.commissionAmount / 100).toFixed(2)}
                         </span>
                       </div>
                       <div className="profit-tooltip-row">
-                        <span style={{ color: token.colorWarning }}>● 各类奖金:</span>
+                        <span>● 各类奖金:</span>
                         <span style={{ fontFamily: 'monospace' }}>
                           +¥{(hoveredMonth.bonusAmount / 100).toFixed(2)}
                         </span>
                       </div>
                       <div className="profit-tooltip-row">
-                        <span style={{ color: token.cyan }}>● 福利津贴:</span>
+                        <span>● 福利津贴:</span>
                         <span style={{ fontFamily: 'monospace' }}>
                           +¥{(hoveredMonth.subsidyAmount / 100).toFixed(2)}
                         </span>
                       </div>
                       {hoveredMonth.deductionAmount > 0 && (
-                        <div className="profit-tooltip-row" style={{ color: token.colorError }}>
+                        <div className="profit-tooltip-row">
                           <span>● 考勤扣除:</span>
                           <span style={{ fontFamily: 'monospace' }}>
                             -¥{(hoveredMonth.deductionAmount / 100).toFixed(2)}
@@ -569,7 +569,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
           <Card
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <PieChartOutlined style={{ color: token.purple }} />
+                <PieChartOutlined />
                 <span style={{ fontWeight: 600 }}>
                   {selectedMember?.name || '该员工'} · 薪资结构分布
                 </span>
@@ -583,7 +583,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               {/* 底薪 */}
               <div className="profit-structure-item">
                 <div className="profit-structure-header">
-                  <span className="profit-structure-title" style={{ color: token.purple }}>
+                  <span className="profit-structure-title">
                     固定底薪 / 课酬 ({basePercent}%)
                   </span>
                   <span className="profit-structure-amount">
@@ -601,7 +601,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               {/* 提成 */}
               <div className="profit-structure-item">
                 <div className="profit-structure-header">
-                  <span className="profit-structure-title" style={{ color: token.colorSuccess }}>
+                  <span className="profit-structure-title">
                     订单提成 ({commPercent}%)
                   </span>
                   <span className="profit-structure-amount">
@@ -619,7 +619,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               {/* 奖金 */}
               <div className="profit-structure-item">
                 <div className="profit-structure-header">
-                  <span className="profit-structure-title" style={{ color: token.colorWarning }}>
+                  <span className="profit-structure-title">
                     各类奖金 ({bonusPercent}%)
                   </span>
                   <span className="profit-structure-amount">
@@ -637,7 +637,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               {/* 津贴 */}
               <div className="profit-structure-item">
                 <div className="profit-structure-header">
-                  <span className="profit-structure-title" style={{ color: token.cyan }}>
+                  <span className="profit-structure-title">
                     福利津贴 ({subsidyPercent}%)
                   </span>
                   <span className="profit-structure-amount">
@@ -658,7 +658,6 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                     style={{
                       display: 'flex',
                       justifyContent: 'space-between',
-                      color: token.colorError,
                       fontSize: 12,
                       fontWeight: 600,
                     }}
@@ -689,7 +688,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
             <span style={{ fontWeight: 600 }}>
               {selectedMember?.name || '该员工'} · 过往月份薪资明细台账
             </span>
-            <span style={{ fontSize: 12, color: token.colorTextTertiary }}>
+            <span style={{ fontSize: 12 }}>
               共 {months.length} 个历史月度账期
             </span>
           </div>

@@ -519,7 +519,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
         label="分账模式"
         required
         extra={
-          <span style={{ fontSize: 12, color: token.colorTextTertiary }}>
+          <span style={{ fontSize: 12 }}>
             {ruleType === 'FIXED_MONTHLY'
               ? '每月固定发放底薪、餐补话费津贴、全勤奖等，自动生成流水并归集至工资条'
               : '依每笔订单金额比例提成，支持随订单责任人 / 关单人动态归属'}
@@ -585,7 +585,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
         required
         style={{ marginBottom: 16 }}
         extra={
-          <span style={{ fontSize: 12, color: token.colorTextTertiary }}>
+          <span style={{ fontSize: 12 }}>
             {periodMode === 'MONTH' && '覆盖自然整月（该月 1 日 00:00:00 至月末 23:59:59）'}
             {periodMode === 'CUSTOM' && '按自然天生效（起止日 00:00:00 至 23:59:59）'}
             {periodMode === 'PERMANENT' && '自生效日起持续生效，每月自动结转，直至手动停用'}
@@ -778,7 +778,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                                 : '固定底薪'}
                         </Tag>
                         {currentMod.name && (
-                          <span style={{ color: token.colorTextTertiary, fontSize: 12, fontWeight: 'normal' }}>
+                          <span style={{ fontSize: 12, fontWeight: 'normal' }}>
                             ({currentMod.name})
                           </span>
                         )}
@@ -796,7 +796,6 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                         {currentMod.shareRatio ? (
                           <span
                             style={{
-                              color: token.colorPrimary,
                               fontFamily: 'monospace',
                               fontWeight: 600,
                               fontSize: 12,
@@ -898,7 +897,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                           {...restField}
                           name={[name, 'allocationMode']}
                           label={
-                            <span style={{ fontWeight: 500, color: token.colorTextSecondary }}>
+                            <span style={{ fontWeight: 500 }}>
                               收益人确定方式
                             </span>
                           }
@@ -970,7 +969,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
 
                         {currentAllocMode === 'FIXED' && (
                           <div>
-                            <div style={{ marginBottom: 8, fontSize: 12, color: token.colorTextTertiary }}>
+                            <div style={{ marginBottom: 8, fontSize: 12 }}>
                               指定固定收益人列表及其在模块内的分配占比（总和必须为 100%）：
                             </div>
                             <Form.List name={[name, 'allocations']}>
@@ -1078,7 +1077,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                                   flexWrap: 'wrap',
                                 }}
                               >
-                                <span style={{ fontSize: 12, color: token.colorTextTertiary }}>常用:</span>
+                                <span style={{ fontSize: 12 }}>常用:</span>
                                 {(currentMod.category === 'BONUS'
                                   ? ['月度全勤奖', '月度绩效奖', '销冠特别激励', '优秀员工奖']
                                   : currentMod.category === 'SUBSIDY'
@@ -1117,12 +1116,11 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                           marginTop: 12,
                         }}
                       >
-                        <div style={{ marginBottom: 10, fontWeight: 500, color: token.colorTextSecondary }}>
+                        <div style={{ marginBottom: 10, fontWeight: 500 }}>
                           <span>收益员工与每月固定发放金额</span>
                           <span
                             style={{
                               fontSize: 12,
-                              color: token.colorTextTertiary,
                               fontWeight: 'normal',
                               marginLeft: 8,
                             }}
@@ -1232,7 +1230,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
               }
               block
               icon={<PlusOutlined />}
-              style={{ height: 44, color: token.colorPrimary, borderColor: token.colorPrimaryBorder, fontWeight: 500 }}
+              style={{ height: 44, borderColor: token.colorPrimaryBorder, fontWeight: 500 }}
             >
               {ruleType === 'FIXED_MONTHLY' ? '添加固定分账款项' : '添加分润模块'}
             </Button>
