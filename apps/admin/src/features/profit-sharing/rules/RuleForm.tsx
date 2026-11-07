@@ -795,8 +795,8 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                         )}
                         {currentMod.shareRatio ? (
                           <span
+                            className="tone-primary"
                             style={{
-                              color: token.colorPrimary,
                               fontFamily: 'monospace',
                               fontWeight: 600,
                               fontSize: 12,
@@ -1232,7 +1232,8 @@ export const RuleForm: React.FC<RuleFormProps> = ({
               }
               block
               icon={<PlusOutlined />}
-              style={{ height: 44, color: token.colorPrimary, borderColor: token.colorPrimaryBorder, fontWeight: 500 }}
+              className="tone-primary"
+              style={{ height: 44, borderColor: token.colorPrimaryBorder, fontWeight: 500 }}
             >
               {ruleType === 'FIXED_MONTHLY' ? '添加固定分账款项' : '添加分润模块'}
             </Button>

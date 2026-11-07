@@ -1,0 +1,79 @@
+/*
+ * Semantic tone classes.
+ *
+ * JSX only describes *which tone* an element carries; the actual color lives
+ * here. Values are read from antd's token CSS variables (var(--ant-*)) so they
+ * follow the active theme algorithm (light / dark) automatically.
+ *
+ * Rules of use:
+ *  - antd declares these variables on each component root (.css-var-*), so a
+ *    tone class only resolves inside an antd component subtree (Card, Table,
+ *    Modal, Tooltip, Layout, ...). Do not put it on elements mounted outside
+ *    that tree, such as custom layers attached straight to document.body.
+ *  - This file must stay the LAST stylesheet imported in main.tsx. Several
+ *    antd components set their own color with the same specificity
+ *    (.ant-typography, .ant-statistic-content), and being last is what makes
+ *    the tone win without !important.
+ *  - Do not use tone classes for colors that depend on runtime state
+ *    (hover, positive/negative values, select/copied flags) — keep those in
+ *    JSX via tokens.
+ */
+
+/* ── Text & icon tones ──────────────────────────────────────────────────── */
+.tone-primary {
+  color: var(--ant-color-primary);
+}
+
+.tone-primary-active {
+  color: var(--ant-color-primary-active);
+}
+
+.tone-success {
+  color: var(--ant-color-success);
+}
+
+.tone-warning {
+  color: var(--ant-color-warning);
+}
+
+.tone-error {
+  color: var(--ant-color-error);
+}
+
+.tone-purple {
+  color: var(--ant-purple);
+}
+
+.tone-cyan {
+  color: var(--ant-cyan);
+}
+
+.tone-cyan-7 {
+  color: var(--ant-cyan-7);
+}
+
+.tone-red-7 {
+  color: var(--ant-red-7);
+}
+
+/*
+ * Buttons paint their label through private --ant-btn-text-color* variables,
+ * so setting `color` alone would leave hover/active on the original hue.
+ */
+.ant-btn.tone-primary {
+  --ant-btn-text-color: var(--ant-color-primary);
+  --ant-btn-text-color-hover: var(--ant-color-primary-hover);
+  --ant-btn-text-color-active: var(--ant-color-primary-active);
+}
+
+.ant-btn.tone-success {
+  --ant-btn-text-color: var(--ant-color-success);
+  --ant-btn-text-color-hover: var(--ant-color-success-hover);
+  --ant-btn-text-color-active: var(--ant-color-success-active);
+}
+
+.ant-btn.tone-purple {
+  --ant-btn-text-color: var(--ant-purple);
+  --ant-btn-text-color-hover: var(--ant-purple-5);
+  --ant-btn-text-color-active: var(--ant-purple-6);
+}

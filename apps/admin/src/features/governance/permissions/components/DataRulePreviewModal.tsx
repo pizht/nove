@@ -109,7 +109,7 @@ export function DataRulePreviewModal({ open, onClose, rule }: DataRulePreviewMod
             </Tag>
           </Descriptions.Item>
           <Descriptions.Item label="业务释义" span={2}>
-            <Text strong style={{ color: token.colorPrimary }}>
+            <Text strong className="tone-primary">
               {explanation}
             </Text>
           </Descriptions.Item>
@@ -186,7 +186,7 @@ export function DataRulePreviewModal({ open, onClose, rule }: DataRulePreviewMod
               }}
             >
               <Space size="small">
-                <PlayCircleOutlined style={{ color: token.colorSuccess }} />
+                <PlayCircleOutlined className="tone-success" />
                 <Text strong>最终生效的数据库查询条件:</Text>
               </Space>
               <Button

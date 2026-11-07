@@ -96,7 +96,7 @@ export function CreateApiKeyModal({
       {result ? (
         <div style={{ padding: '8px 0 4px' }}>
           <div style={{ textAlign: 'center', marginBottom: 20 }}>
-            <CheckCircleFilled style={{ color: token.colorSuccess, fontSize: 48 }} />
+            <CheckCircleFilled className="tone-success" style={{ fontSize: 48 }} />
             <div style={{ marginTop: 10, fontSize: 20, fontWeight: 600 }}>API Key 创建成功</div>
             <div style={{ marginTop: 4, color: token.colorTextSecondary }}>现在可以使用此密钥访问已授权的服务</div>
           </div>

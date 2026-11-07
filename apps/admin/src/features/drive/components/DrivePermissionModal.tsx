@@ -396,7 +396,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
             <Popover
               title={
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600 }}>
-                  <InfoCircleOutlined style={{ color: token.colorPrimary }} />
+                  <InfoCircleOutlined className="tone-primary" />
                   <span>权限判定规则说明</span>
                 </div>
               }
@@ -405,7 +405,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
                   <div style={{ marginBottom: 6 }}>• 组织成员默认具备基础只读与查看权限。</div>
                   <div>
                     • 若配置了{' '}
-                    <span style={{ color: token.colorError, fontWeight: 600 }}>「显式拒绝 (DENY)」</span>
+                    <span className="tone-error" style={{ fontWeight: 600 }}>「显式拒绝 (DENY)」</span>
                     ，其优先级高于任何允许或继承规则，将直接阻断对应操作。
                   </div>
                 </div>

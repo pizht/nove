@@ -155,7 +155,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
     <Modal
       title={
         <Space>
-          <ClockCircleOutlined style={{ color: token.colorPrimary }} />
+          <ClockCircleOutlined className="tone-primary" />
           <span>订单权益调整与冻结记录</span>
           <span style={{ fontSize: 13, color: token.colorTextSecondary, fontWeight: 'normal' }}>
             ({order.orderCode})
@@ -190,7 +190,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
             {formatDateTime(order.benefitStart)}
           </Descriptions.Item>
           <Descriptions.Item label="权益结束时间" span={2}>
-            <Text strong style={{ color: token.colorPrimaryActive }}>
+            <Text strong className="tone-primary-active">
               {formatDateTime(order.benefitEnd)}
             </Text>
           </Descriptions.Item>
@@ -341,7 +341,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
                       <Text type="secondary">到期日变动：</Text>
                       <Text delete>{formatDateTime(item.beforeEnd)}</Text>
                       <span style={{ margin: '0 6px' }}>➔</span>
-                      <Text strong style={{ color: token.colorPrimaryActive }}>
+                      <Text strong className="tone-primary-active">
                         {formatDateTime(item.afterEnd)}
                       </Text>
                     </div>

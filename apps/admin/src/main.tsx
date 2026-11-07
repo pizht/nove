@@ -13,6 +13,8 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { AppProviders } from './app/providers/AppProviders';
 import { useAuthStore } from './features/auth/model/authStore';
+// Must stay last: tone classes rely on coming after component stylesheets.
+import './app/styles/tones.css';
 
 const initializeAuth = async () => {
   await useAuthStore.getState().initialize();

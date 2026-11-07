@@ -552,7 +552,7 @@ export function OrderRefundManagement() {
                         ) : null}
                         ，扣除后有效使用 <strong>{calculationPreview.effectiveUsedDays}</strong>{' '}
                         天（剩余约 {calculationPreview.remainingDays} 天）。建议退款：
-                        <strong style={{ color: token.colorPrimary }}>
+                        <strong className="tone-primary">
                           ¥{(calculationPreview.suggestedRefundAmount / 100).toFixed(2)}
                         </strong>
                       </span>

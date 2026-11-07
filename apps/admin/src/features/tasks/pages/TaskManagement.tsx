@@ -495,7 +495,7 @@ export function TaskManagement() {
       render: (lastError: string | null) =>
         lastError ? (
           <Tooltip title={lastError}>
-            <span style={{ color: token.red7 }}>{lastError}</span>
+            <span className="tone-red-7">{lastError}</span>
           </Tooltip>
         ) : (
           '-'

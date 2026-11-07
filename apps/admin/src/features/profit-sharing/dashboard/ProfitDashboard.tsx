@@ -188,8 +188,9 @@ export const ProfitDashboard: React.FC = () => {
                     }
                     value={overall.totalGrossAmount / 100}
                     precision={2}
-                    prefix={<DollarOutlined style={{ color: token.colorPrimary }} />}
-                    valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                    prefix={<DollarOutlined className="tone-primary" />}
+                    classNames={{ content: 'tone-primary' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">
                     涵盖近 {monthsCount} 个月全员全部发薪总额
@@ -207,7 +208,8 @@ export const ProfitDashboard: React.FC = () => {
                     value={overall.avgMonthlyGross / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                    classNames={{ content: 'tone-success' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">全平台月均平稳薪资水平</div>
                 </Card>
@@ -221,8 +223,9 @@ export const ProfitDashboard: React.FC = () => {
                       </span>
                     }
                     value={memberSeries.length > 0 ? memberSeries[0].memberName : '-'}
-                    prefix={<RiseOutlined style={{ color: token.colorWarning }} />}
-                    valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                    prefix={<RiseOutlined className="tone-warning" />}
+                    classNames={{ content: 'tone-warning' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">
                     {memberSeries.length > 0
@@ -241,8 +244,9 @@ export const ProfitDashboard: React.FC = () => {
                     }
                     value={memberSeries.length}
                     suffix="人"
-                    prefix={<TeamOutlined style={{ color: token.purple }} />}
-                    valueStyle={{ color: token.purple, fontWeight: 700 }}
+                    prefix={<TeamOutlined className="tone-purple" />}
+                    classNames={{ content: 'tone-purple' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">共包含 {members.length} 名在册核算成员</div>
                 </Card>
@@ -260,8 +264,9 @@ export const ProfitDashboard: React.FC = () => {
                     }
                     value={overall.totalGrossAmount / 100}
                     precision={2}
-                    prefix={<DollarOutlined style={{ color: token.colorPrimary }} />}
-                    valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                    prefix={<DollarOutlined className="tone-primary" />}
+                    classNames={{ content: 'tone-primary' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">近 {monthsCount} 个月该员工累计发薪总额</div>
                 </Card>
@@ -277,7 +282,8 @@ export const ProfitDashboard: React.FC = () => {
                     value={overall.avgMonthlyGross / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                    classNames={{ content: 'tone-success' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">月度平均综合薪酬收益</div>
                 </Card>
@@ -292,8 +298,9 @@ export const ProfitDashboard: React.FC = () => {
                     }
                     value={overall.maxMonthlyGross / 100}
                     precision={2}
-                    prefix={<RiseOutlined style={{ color: token.colorWarning }} />}
-                    valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                    prefix={<RiseOutlined className="tone-warning" />}
+                    classNames={{ content: 'tone-warning' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">峰值创收发薪月份记录</div>
                 </Card>
@@ -309,7 +316,8 @@ export const ProfitDashboard: React.FC = () => {
                     value={overall.totalPendingAmount / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.purple, fontWeight: 700 }}
+                    classNames={{ content: 'tone-purple' }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">
                     已结清发放: ¥{(overall.totalSettledAmount / 100).toFixed(2)}

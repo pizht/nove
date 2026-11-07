@@ -71,7 +71,7 @@ export function Topbar({ collapsed, sidebarWidth }: TopbarProps) {
       onClick: () => {
         Modal.confirm({
           title: `确认退出登录"${user?.name || user?.email || 'Admin'}"吗？`,
-          icon: <ExclamationCircleFilled style={{ color: token.colorWarning }} />,
+          icon: <ExclamationCircleFilled className="tone-warning" />,
           content: '退出登录不会丢失任何数据，你仍可以随时登录本账号',
           centered: true,
           okText: '退出',

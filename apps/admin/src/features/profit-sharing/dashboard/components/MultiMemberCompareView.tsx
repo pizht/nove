@@ -275,7 +275,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
       sorter: (a: MemberHistoricalSeries, b: MemberHistoricalSeries) =>
         a.avgMonthlyGross - b.avgMonthlyGross,
       render: (_: unknown, r: MemberHistoricalSeries) => (
-        <span style={{ color: token.colorSuccess, fontWeight: 600, fontFamily: 'monospace' }}>
+        <span className="tone-success" style={{ fontWeight: 600, fontFamily: 'monospace' }}>
           ¥{(r.avgMonthlyGross / 100).toFixed(2)}
         </span>
       ),
@@ -740,9 +740,9 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                         月均: ¥{(s.avgMonthlyGross / 100).toFixed(2)}
                       </span>
                       <span
+                        className="tone-primary"
                         style={{
                           fontWeight: 700,
-                          color: token.colorPrimary,
                           fontSize: 15,
                           fontFamily: 'monospace',
                         }}

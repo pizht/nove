@@ -370,7 +370,8 @@ export const PayslipList: React.FC = () => {
           <Button
             type="link"
             size="small"
-            style={{ color: token.purple, padding: 0 }}
+            className="tone-purple"
+            style={{ padding: 0 }}
             icon={<PlusCircleOutlined />}
             onClick={() => handleOpenAdjustment({ id: record.memberId, name: record.memberName })}
           >
@@ -389,7 +390,8 @@ export const PayslipList: React.FC = () => {
               <Button
                 type="link"
                 size="small"
-                style={{ color: token.colorSuccess, padding: 0 }}
+                className="tone-success"
+                style={{ padding: 0 }}
                 icon={<DollarOutlined />}
               >
                 发薪
@@ -429,7 +431,7 @@ export const PayslipList: React.FC = () => {
             />
             <span style={{ fontSize: 13, color: token.colorTextSecondary, whiteSpace: 'nowrap' }}>
               共 <strong>{items.length}</strong> 人 · 应发合计{' '}
-              <strong style={{ color: token.colorPrimary, fontFamily: 'monospace' }}>
+              <strong className="tone-primary" style={{ fontFamily: 'monospace' }}>
                 ¥{((summary?.totalGrossAmount || 0) / 100).toFixed(2)}
               </strong>{' '}
               (已发{' '}

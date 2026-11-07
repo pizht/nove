@@ -476,7 +476,7 @@ export const RuleList: React.FC = () => {
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
               >
                 <span>
-                  已选择 <strong style={{ color: token.colorPrimary }}>{selectedRowKeys.length}</strong>{' '}
+                  已选择 <strong className="tone-primary">{selectedRowKeys.length}</strong>{' '}
                   条规则
                 </span>
                 <Space>
