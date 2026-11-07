@@ -98,7 +98,7 @@ export function CreateApiKeyModal({
           <div style={{ textAlign: 'center', marginBottom: 20 }}>
             <CheckCircleFilled style={{ color: token.colorSuccess, fontSize: 48 }} />
             <div style={{ marginTop: 10, fontSize: 20, fontWeight: 600 }}>API Key 创建成功</div>
-            <div style={{ marginTop: 4, color: token.colorTextSecondary }}>现在可以使用此密钥访问已授权的服务</div>
+            <div style={{ marginTop: 4 }}>现在可以使用此密钥访问已授权的服务</div>
           </div>
 
           <div
@@ -109,7 +109,7 @@ export function CreateApiKeyModal({
               borderRadius: 8,
             }}
           >
-            <div style={{ marginBottom: 8, color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+            <div style={{ marginBottom: 8,  fontSize: 12, fontWeight: 500 }}>
               API Key
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

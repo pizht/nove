@@ -401,7 +401,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
                 </div>
               }
               content={
-                <div style={{ maxWidth: 280, fontSize: 13, lineHeight: 1.6, color: token.colorTextSecondary }}>
+                <div style={{ maxWidth: 280, fontSize: 13, lineHeight: 1.6 }}>
                   <div style={{ marginBottom: 6 }}>• 组织成员默认具备基础只读与查看权限。</div>
                   <div>
                     • 若配置了{' '}
@@ -419,7 +419,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
                   shape="circle"
                   size="small"
                   className="drive-perm-help-btn"
-                  icon={<QuestionCircleOutlined style={{ fontSize: 14, color: token.colorTextTertiary }} />}
+                  icon={<QuestionCircleOutlined style={{ fontSize: 14 }} />}
                   aria-label="查看权限判定规则说明"
                 />
               </Tooltip>
@@ -436,7 +436,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
       <div className="drive-perm-section">
         <div className="drive-perm-section-title">
           <span>新增授权规则</span>
-          <SettingOutlined style={{ color: token.colorTextTertiary }} />
+          <SettingOutlined />
         </div>
 
         {/* 1. Principal Type & Selector */}
@@ -534,12 +534,12 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
             buttonStyle="solid"
           >
             <Radio.Button value="ALLOW">
-              <span style={{ color: effect === 'ALLOW' ? token.colorTextLightSolid : token.colorSuccess }}>
+              <span>
                 <CheckCircleOutlined /> 允许 (ALLOW)
               </span>
             </Radio.Button>
             <Radio.Button value="DENY">
-              <span style={{ color: effect === 'DENY' ? token.colorTextLightSolid : token.colorError }}>
+              <span>
                 <StopOutlined /> 显式拒绝 (DENY)
               </span>
             </Radio.Button>
@@ -550,7 +550,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
         <div className="drive-perm-form-item">
           <div className="drive-perm-form-label">
             <span>权限范围 (Actions)</span>
-            <span style={{ fontSize: 11, color: token.colorTextTertiary }}>已选 {actions.length} 项</span>
+            <span style={{ fontSize: 11 }}>已选 {actions.length} 项</span>
           </div>
 
           <div className="drive-perm-presets">
@@ -617,7 +617,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
         </div>
 
         {loadingGrants ? (
-          <div style={{ textAlign: 'center', padding: '24px 0', color: token.colorTextSecondary }}>
+          <div style={{ textAlign: 'center', padding: '24px 0' }}>
             <Spin />
             <div style={{ marginTop: 8, fontSize: 13 }}>正在加载权限规则...</div>
           </div>

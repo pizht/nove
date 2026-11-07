@@ -272,7 +272,7 @@ export function OrderRefundManagement() {
       render: (value: string, record) => (
         <Space direction="vertical" size={2}>
           <span style={{ fontFamily: 'monospace', fontWeight: 600 }}>{value}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{record.applicantName || '-'}</span>
+          <span style={{  fontSize: 12 }}>{record.applicantName || '-'}</span>
         </Space>
       ),
     },
@@ -283,7 +283,7 @@ export function OrderRefundManagement() {
         record.order ? (
           <Space direction="vertical" size={2}>
             <span>{record.order.orderCode}</span>
-            <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{record.order.orderNumber}</span>
+            <span style={{  fontSize: 12 }}>{record.order.orderNumber}</span>
           </Space>
         ) : (
           '-'

@@ -47,7 +47,6 @@ export function RotateApiKeyModal({
           <div
             style={{
               padding: 12,
-              backgroundColor: token.colorFillTertiary,
               borderRadius: 4,
               fontFamily: 'monospace',
               fontSize: 14,
@@ -60,7 +59,7 @@ export function RotateApiKeyModal({
           >
             <span>{result.key}</span>
           </div>
-          <div style={{ marginTop: 16, color: token.colorTextSecondary, fontSize: 12 }}>
+          <div style={{ marginTop: 16,  fontSize: 12 }}>
             <p>• ID: {result.id}</p>
             <p>• 名称: {result.name}</p>
             <p>• 前缀: {result.prefix}</p>

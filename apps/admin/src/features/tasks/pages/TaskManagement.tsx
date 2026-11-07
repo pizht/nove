@@ -477,7 +477,7 @@ export function TaskManagement() {
               <Tooltip title={`Cron：${record.cron || '-'}`}>
                 <span>{describeCronExpression(record.cron)}</span>
               </Tooltip>
-              <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>
+              <span style={{  fontSize: 12 }}>
                 {record.timezone || 'Asia/Shanghai'}
               </span>
             </Space>

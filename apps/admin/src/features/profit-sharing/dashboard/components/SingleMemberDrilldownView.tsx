@@ -137,7 +137,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
         val > 0 ? (
           <span style={{ color: token.colorWarning, fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -148,7 +148,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
         val > 0 ? (
           <span style={{ color: token.cyan, fontWeight: 500 }}>+¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -159,7 +159,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
         val > 0 ? (
           <span style={{ color: token.colorError, fontWeight: 500 }}>-¥{(val / 100).toFixed(2)}</span>
         ) : (
-          <span style={{ color: token.colorTextQuaternary }}>-</span>
+          <span>-</span>
         ),
     },
     {
@@ -177,7 +177,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
       key: 'split',
       render: (_: unknown, r: HistoricalMonthPoint) => (
         <div style={{ fontSize: 12 }}>
-          <div style={{ color: token.colorTextSecondary }}>已发: ¥{(r.settledAmount / 100).toFixed(2)}</div>
+          <div>已发: ¥{(r.settledAmount / 100).toFixed(2)}</div>
           {r.pendingAmount > 0 ? (
             <div style={{ color: token.colorWarning, fontWeight: 600 }}>
               待发: ¥{(r.pendingAmount / 100).toFixed(2)}
@@ -231,7 +231,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                 {selectedMember.role || '员工'}
               </Tag>
               {selectedMember.department && (
-                <span style={{ fontSize: 12, color: token.colorTextSecondary }}>
+                <span style={{ fontSize: 12 }}>
                   部门：{selectedMember.department}
                 </span>
               )}
@@ -241,7 +241,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
 
         <Space size="middle" wrap>
           <Space size="small">
-            <span style={{ fontSize: 12, color: token.colorTextSecondary }}>统计周期：</span>
+            <span style={{ fontSize: 12 }}>统计周期：</span>
             <Segmented
               size="small"
               value={monthsCount}
@@ -304,14 +304,12 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                           y1={y}
                           x2={chartWidth - paddingX}
                           y2={y}
-                          style={{ stroke: token.colorBorderSecondary }}
                           strokeDasharray="4 4"
                         />
                         <text
                           x={paddingX - 10}
                           y={y + 4}
                           textAnchor="end"
-                          style={{ fill: token.colorTextTertiary }}
                           fontSize="11"
                           fontFamily="monospace"
                         >
@@ -363,7 +361,6 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                                 cx={x + barWidth / 2}
                                 cy={paddingY + innerHeight}
                                 r={3}
-                                style={{ fill: token.colorTextQuaternary }}
                               />
                             )}
 
@@ -418,7 +415,6 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                               y={paddingY + innerHeight + 20}
                               textAnchor="middle"
                               fontSize="12"
-                              style={{ fill: isHover ? token.colorPrimary : token.colorTextSecondary }}
                               fontWeight={isHover ? 700 : 500}
                             >
                               {m.label}
@@ -477,9 +473,6 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                                     cy={p.y}
                                     r={isHover ? 6 : 4}
                                     style={{
-                                      fill: isHover
-                                        ? token.colorPrimary
-                                        : token.colorBgContainer,
                                       stroke: token.colorPrimary,
                                     }}
                                     strokeWidth="2.5"
@@ -489,7 +482,6 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                                     y={paddingY + innerHeight + 20}
                                     textAnchor="middle"
                                     fontSize="12"
-                                    style={{ fill: isHover ? token.colorPrimary : token.colorTextSecondary }}
                                     fontWeight={isHover ? 700 : 500}
                                   >
                                     {p.m.label}
@@ -653,7 +645,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
               </div>
 
               {categoryTotals.deductionAmount > 0 && (
-                <div style={{ paddingTop: 8, borderTop: `1px solid ${token.colorBorderSecondary}` }}>
+                <div style={{ paddingTop: 8 }}>
                   <div
                     style={{
                       display: 'flex',
@@ -689,7 +681,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
             <span style={{ fontWeight: 600 }}>
               {selectedMember?.name || '该员工'} · 过往月份薪资明细台账
             </span>
-            <span style={{ fontSize: 12, color: token.colorTextTertiary }}>
+            <span style={{ fontSize: 12 }}>
               共 {months.length} 个历史月度账期
             </span>
           </div>

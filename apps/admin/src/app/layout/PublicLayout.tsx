@@ -9,7 +9,6 @@
  * Copyright (c) 2026 by LuLab-Team, All Rights Reserved.
  */
 import Layout from 'antd/es/layout';
-import theme from 'antd/es/theme';
 import { Outlet } from 'react-router-dom';
 
 const { Content } = Layout;
@@ -19,9 +18,8 @@ interface PublicLayoutProps {
 }
 
 export function PublicLayout({ children }: PublicLayoutProps) {
-  const { token } = theme.useToken();
   return (
-    <Layout style={{ minHeight: '100vh', background: token.colorBgLayout }}>
+    <Layout style={{ minHeight: '100vh' }}>
       <Content
         style={{
           display: 'flex',

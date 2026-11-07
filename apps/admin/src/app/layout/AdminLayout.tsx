@@ -9,7 +9,6 @@
  * Copyright (c) 2026 by LuLab-Team, All Rights Reserved.
  */
 import { Button, Divider, Layout } from 'antd';
-import theme from 'antd/es/theme';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -45,7 +44,6 @@ interface AdminLayoutProps {
 }
 
 export function AdminLayout({ routes, children }: AdminLayoutProps) {
-  const { token } = theme.useToken();
   const { pathname } = useLocation();
   const [collapsed, setCollapsed] = useState(getInitialCollapsedState);
 
@@ -69,7 +67,6 @@ export function AdminLayout({ routes, children }: AdminLayoutProps) {
         onCollapse={handleCollapsedChange}
         trigger={null}
         style={{
-          background: token.colorBgLayout,
           height: 'calc(100vh - 64px)',
           position: 'fixed',
           left: 0,
@@ -137,7 +134,6 @@ export function AdminLayout({ routes, children }: AdminLayoutProps) {
               marginTop: pathname === '/' ? 12 : 0,
               padding: 24,
               overflow: 'auto',
-              background: token.colorBgContainer,
               borderRadius: 8,
             }}
           >

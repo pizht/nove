@@ -182,7 +182,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         周期内全员发薪总盘
                       </span>
                     }
@@ -200,7 +200,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         全员月均发薪支出
                       </span>
                     }
@@ -216,7 +216,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         创收领先标杆员工
                       </span>
                     }
@@ -235,7 +235,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         核算覆盖人员规模
                       </span>
                     }
@@ -254,7 +254,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         该员工周期总实发
                       </span>
                     }
@@ -270,7 +270,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         该员工月均实发
                       </span>
                     }
@@ -286,7 +286,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         单月最高收入纪录
                       </span>
                     }
@@ -302,7 +302,7 @@ export const ProfitDashboard: React.FC = () => {
                 <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                   <Statistic
                     title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
+                      <span style={{  fontSize: 13, fontWeight: 500 }}>
                         待结算发放金额
                       </span>
                     }

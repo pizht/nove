@@ -124,7 +124,7 @@ export function DataRulePreviewModal({ open, onClose, rule }: DataRulePreviewMod
               <span>模拟运行用户上下文 (Mock User Context)</span>
             </Space>
           }
-          style={{ marginBottom: 16, background: token.colorFillQuaternary }}
+          style={{ marginBottom: 16 }}
         >
           <Space direction="vertical" style={{ width: '100%' }} size="small">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

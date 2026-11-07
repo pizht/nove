@@ -226,7 +226,7 @@ export const RuleList: React.FC = () => {
           return (
             <Space size="small">
               <Tag color="purple">长期有效</Tag>
-              <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+              <span style={{  fontSize: 12 }}>
                 自 {start.format('YYYY-MM-DD')} 起
               </span>
             </Space>
@@ -237,13 +237,13 @@ export const RuleList: React.FC = () => {
           return (
             <Space size="small">
               <Tag color="cyan">{start.format('YYYY年MM月')}</Tag>
-              <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>整月</span>
+              <span style={{  fontSize: 12 }}>整月</span>
             </Space>
           );
         }
 
         return (
-          <span style={{ color: token.colorTextSecondary }}>
+          <span>
             {start.format('YYYY-MM-DD')} ~ {end.format('YYYY-MM-DD')}
           </span>
         );

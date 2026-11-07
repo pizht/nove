@@ -157,7 +157,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
         <Space>
           <ClockCircleOutlined style={{ color: token.colorPrimary }} />
           <span>订单权益调整与冻结记录</span>
-          <span style={{ fontSize: 13, color: token.colorTextSecondary, fontWeight: 'normal' }}>
+          <span style={{ fontSize: 13,  fontWeight: 'normal' }}>
             ({order.orderCode})
           </span>
         </Space>
@@ -333,7 +333,7 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
                     <Space>
                       {getAdjustmentTag(item.type)}
                       {item.days > 0 && <Tag>{`调整 ${item.days} 天`}</Tag>}
-                      <span style={{ fontSize: 12, color: token.colorTextTertiary }}>
+                      <span style={{ fontSize: 12 }}>
                         {dayjs(item.createdAt).format('YYYY-MM-DD HH:mm:ss')}
                       </span>
                     </Space>
@@ -346,10 +346,10 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
                       </Text>
                     </div>
                     {item.reason && (
-                      <div style={{ fontSize: 13, color: token.colorTextSecondary }}>原因：{item.reason}</div>
+                      <div style={{ fontSize: 13 }}>原因：{item.reason}</div>
                     )}
                     {item.operator?.name && (
-                      <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
+                      <div style={{ fontSize: 12 }}>
                         操作人：{item.operator.name}
                       </div>
                     )}

@@ -11,7 +11,6 @@ import Tag from 'antd/es/tag';
 import Tooltip from 'antd/es/tooltip';
 import Typography from 'antd/es/typography';
 import type { TableProps } from 'antd/es/table';
-import theme from 'antd/es/theme';
 import {
   DeleteOutlined,
   EditOutlined,
@@ -76,7 +75,6 @@ const getLocalUserLabel = (user: LocalUserOption) =>
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function PlatformUserManagement() {
-  const { token } = theme.useToken();
   const queryClient = useQueryClient();
 
   // ── Filter state ──────────────────────────────────────────────────────────
@@ -235,7 +233,7 @@ export function PlatformUserManagement() {
       key: 'platform',
       width: 130,
       render: (platform: Platform) => {
-        const info = PLATFORM_LABELS[platform] ?? { label: platform, color: token.colorTextTertiary };
+        const info = PLATFORM_LABELS[platform] ?? { label: platform };
         return (
           <Tag color={info.color} style={{ margin: 0 }}>
             {info.label}
@@ -267,7 +265,7 @@ export function PlatformUserManagement() {
       ellipsis: true,
       render: (val: string) => (
         <Tooltip title={val}>
-          <Text copyable style={{ fontSize: 12, color: token.colorTextSecondary }}>
+          <Text copyable style={{ fontSize: 12 }}>
             {val}
           </Text>
         </Tooltip>
@@ -580,7 +578,6 @@ function LocalUserOptionContent({ user }: { user: LocalUserOption }) {
 // ─── Detail Panel ─────────────────────────────────────────────────────────────
 
 function DetailPanel({ detail, loading }: { detail: PlatformUserDetail | null; loading: boolean }) {
-  const { token } = theme.useToken();
   if (loading || !detail) {
     return (
       <div className="platform-user-detail">
@@ -590,7 +587,7 @@ function DetailPanel({ detail, loading }: { detail: PlatformUserDetail | null; l
   }
 
   const platform = detail.platform as Platform;
-  const platformInfo = PLATFORM_LABELS[platform] ?? { label: platform, color: token.colorTextTertiary };
+  const platformInfo = PLATFORM_LABELS[platform] ?? { label: platform };
 
   return (
     <div className="platform-user-detail">
@@ -647,7 +644,7 @@ function DetailPanel({ detail, loading }: { detail: PlatformUserDetail | null; l
               {detail.user.id && (
                 <Text
                   copyable={{ text: detail.user.id }}
-                  style={{ fontSize: 11, color: token.colorTextTertiary }}
+                  style={{ fontSize: 11 }}
                 >
                   {detail.user.id}
                 </Text>

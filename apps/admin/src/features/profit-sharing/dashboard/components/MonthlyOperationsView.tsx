@@ -159,7 +159,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       应发分润 / 总薪酬
                     </span>
                   }
@@ -174,7 +174,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       固定底薪 / 课酬
                     </span>
                   }
@@ -189,7 +189,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       订单提成总额
                     </span>
                   }
@@ -204,7 +204,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       各类奖金总额
                     </span>
                   }
@@ -219,11 +219,10 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card
                 bordered={false}
                 className="profit-kpi-card"
-                style={{ background: token.colorFillQuaternary, borderColor: token.colorBorderSecondary }}
               >
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       福利津贴补贴
                     </span>
                   }
@@ -238,7 +237,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-red">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       各项扣减总额
                     </span>
                   }
@@ -257,7 +256,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       已发放 / 已结清金额
                     </span>
                   }
@@ -273,7 +272,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       待发放 / 待结算金额
                     </span>
                   }
@@ -289,7 +288,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       处理分润订单数
                     </span>
                   }
@@ -304,7 +303,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
               <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
                 <Statistic
                   title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+                    <span style={{  fontSize: 12, fontWeight: 500 }}>
                       参与核算员工数
                     </span>
                   }
@@ -366,11 +365,11 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                           fontSize: 12,
                         }}
                       >
-                        <span style={{ fontWeight: 600, color: token.colorTextSecondary }}>
+                        <span style={{ fontWeight: 600 }}>
                           {item.name || '分润模块'}
                         </span>
                         <Space size="middle">
-                          <span style={{ color: token.colorTextTertiary, fontWeight: 500 }}>{percent}%</span>
+                          <span style={{  fontWeight: 500 }}>{percent}%</span>
                           <span
                             style={{ fontWeight: 700, fontFamily: 'monospace' }}
                           >
@@ -458,7 +457,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                             <div style={{ fontWeight: 600, fontSize: 13 }}>
                               {item.name || '未分配人员'}
                             </div>
-                            <div style={{ fontSize: 12, color: token.colorTextTertiary }}>
+                            <div style={{ fontSize: 12 }}>
                               岗位角色：{item.role || '成员'}
                             </div>
                           </div>
