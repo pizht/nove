@@ -314,11 +314,5 @@
 }
 
 .data-rule-summary-warnings {
-  display: flex;
-  gap: 8px;
-  padding: 8px 12px;
-  border-top: 1px solid var(--ant-color-warning-border);
-  background: var(--ant-color-warning-bg);
-  color: var(--ant-gold-9);
   font-size: 12px;
 }

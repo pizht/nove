@@ -18,7 +18,7 @@ import Table from 'antd/es/table';
 import Tag from 'antd/es/tag';
 import Tooltip from 'antd/es/tooltip';
 import type { TableProps } from 'antd/es/table';
-import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import { useMemo, useState } from 'react';
 import { Perm } from '../../../../app/guards/Perm';
 import {
@@ -29,6 +29,8 @@ import {
 import { PERMISSIONS } from '../../../../shared/utils/permissions';
 import { channelApi } from '../api/channelApi';
 import type { Channel, ChannelListParams, CreateChannel, UpdateChannel } from '../types';
+
+const { Text } = Typography;
 
 const { Search, TextArea } = Input;
 
@@ -53,7 +55,6 @@ function buildPayload(values: ChannelFormValues): CreateChannel {
 }
 
 export function ChannelManagement() {
-  const { token } = theme.useToken();
   const [filters, setFilters] = useState<TableQueryParams>({
     page: 1,
     pageSize: 10,
@@ -170,9 +171,9 @@ export function ChannelManagement() {
       render: (_value, record) => (
         <Space orientation="vertical" size={0}>
           <span style={{ fontWeight: 600 }}>{record.name}</span>
-          <span style={{ color: token.colorTextSecondary, fontFamily: 'monospace', fontSize: 12 }}>
+          <Text type="secondary" style={{ fontFamily: 'monospace', fontSize: 12 }}>
             {record.code}
-          </span>
+          </Text>
         </Space>
       ),
     },

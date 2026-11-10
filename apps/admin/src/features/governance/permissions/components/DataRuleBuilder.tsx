@@ -20,7 +20,6 @@ import {
   PlusOutlined,
   QuestionCircleOutlined,
   ThunderboltOutlined,
-  WarningOutlined,
 } from '@ant-design/icons';
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
@@ -633,10 +632,14 @@ export function DataRuleBuilder({ value = '{\n  \n}', onChange, resource }: Data
           </div>
         )}
         {conditionWarnings.length > 0 && (
-          <div className="data-rule-summary-warnings" role="status">
-            <WarningOutlined />
-            <span>{conditionWarnings.join(' ')}</span>
-          </div>
+          <Alert
+            className="data-rule-summary-warnings"
+            role="status"
+            type="warning"
+            showIcon
+            banner
+            title={conditionWarnings.join(' ')}
+          />
         )}
       </div>
     </div>

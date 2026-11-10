@@ -15,6 +15,7 @@ import Tag from 'antd/es/tag';
 import Tooltip from 'antd/es/tooltip';
 import type { TableProps } from 'antd/es/table';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import dayjs from 'dayjs';
 import type { Dayjs } from 'dayjs';
 import { useMemo, useState } from 'react';
@@ -52,6 +53,8 @@ import type {
   PaymentProvider,
   UpdateOrder,
 } from '../types';
+
+const { Text } = Typography;
 
 const { Search } = Input;
 const { RangePicker } = DatePicker;
@@ -385,7 +388,7 @@ export function OrderManagement() {
       render: (_: unknown, record) => (
         <Space direction="vertical" size={2}>
           <span style={{ fontFamily: 'monospace', fontWeight: 600 }}>{record.orderCode}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{record.orderNumber}</span>
+          <Text type="secondary" style={{ fontSize: 12 }}>{record.orderNumber}</Text>
           {record.externalId && (
             <span style={{ color: token.colorTextTertiary, fontSize: 12 }}>{record.externalId}</span>
           )}
@@ -399,9 +402,9 @@ export function OrderManagement() {
       render: (_: unknown, record) => (
         <Space direction="vertical" size={2}>
           <span>{record.productName || record.product?.name || '-'}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+          <Text type="secondary" style={{ fontSize: 12 }}>
             {[record.email, record.phone].filter(Boolean).join(' / ') || '-'}
-          </span>
+          </Text>
         </Space>
       ),
     },
@@ -431,7 +434,7 @@ export function OrderManagement() {
       render: (_: unknown, record) => (
         <Space direction="vertical" size={2}>
           <span>{record.paymentProvider || '-'}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{formatDateTime(record.paidAt)}</span>
+          <Text type="secondary" style={{ fontSize: 12 }}>{formatDateTime(record.paidAt)}</Text>
         </Space>
       ),
     },

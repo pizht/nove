@@ -17,6 +17,7 @@ import {
   notification,
 } from 'antd';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import {
   CalendarOutlined,
   ArrowRightOutlined,
@@ -32,6 +33,8 @@ import { useNavigate } from 'react-router-dom';
 import { payslipApi } from '../../payslips/api/payslipApi';
 import { recordApi } from '../../records/api/recordApi';
 import type { ProfitSharingDashboardStats } from '../../records/types';
+
+const { Text } = Typography;
 
 interface MonthlyOperationsViewProps {
   stats: ProfitSharingDashboardStats;
@@ -106,7 +109,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
       {/* 账期月份选择控制台（作为独立卡片板块拆分呈现，与其他板块工具栏保持一致） */}
       <div className="profit-toolbar-card">
         <Space size="middle" align="center">
-          <CalendarOutlined style={{ color: token.colorPrimary }} />
+          <CalendarOutlined />
           <span style={{ fontWeight: 600, fontSize: 13 }}>核算账期选择：</span>
           <Tag color={selectedMonth === 'ALL' ? 'blue' : 'cyan'}>{periodDisplay}</Tag>
         </Space>
@@ -156,96 +159,68 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           {/* 第一排：5 大板块构成与应发总额 */}
           <Row gutter={[12, 12]}>
             <Col xs={24} sm={12} lg={4}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      应发分润 / 总薪酬
-                    </span>
-                  }
+                  title="应发分润 / 总薪酬"
                   value={summary.totalGrossAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorPrimary, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={4}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      固定底薪 / 课酬
-                    </span>
-                  }
+                  title="固定底薪 / 课酬"
                   value={summary.totalBaseSalaryAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.purple, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={4}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      订单提成总额
-                    </span>
-                  }
+                  title="订单提成总额"
                   value={summary.totalCommissionAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorSuccess, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={4}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      各类奖金总额
-                    </span>
-                  }
+                  title="各类奖金总额"
                   value={summary.totalBonusAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorWarning, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={4}>
-              <Card
-                bordered={false}
-                className="profit-kpi-card"
-                style={{ background: token.colorFillQuaternary, borderColor: token.colorBorderSecondary }}
-              >
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      福利津贴补贴
-                    </span>
-                  }
+                  title="福利津贴补贴"
                   value={summary.totalSubsidyAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.cyan7, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={4}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-red">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      各项扣减总额
-                    </span>
-                  }
+                  title="各项扣减总额"
                   value={summary.totalDeductionAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorError, fontWeight: 700, fontSize: 18 }}
+                  styles={{ content: { color: token.colorError, fontWeight: 700, fontSize: 18 } }}
                 />
               </Card>
             </Col>
@@ -254,64 +229,53 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           {/* 第二排：发放结算进度与业务量 */}
           <Row gutter={[12, 12]}>
             <Col xs={24} sm={12} lg={6}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      已发放 / 已结清金额
-                    </span>
-                  }
+                  title="已发放 / 已结清金额"
                   value={summary.totalSettledAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                  styles={{ content: { fontWeight: 700 } }}
                 />
                 <div className="profit-kpi-subtext">财务已划转完成</div>
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={6}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      待发放 / 待结算金额
-                    </span>
-                  }
+                  title="待发放 / 待结算金额"
                   value={summary.totalPendingAmount / 100}
                   precision={2}
                   prefix="¥"
-                  valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                  styles={{
+                    content: {
+                      fontWeight: 700,
+                      ...(summary.totalPendingAmount > 0 && { color: token.colorWarning }),
+                    },
+                  }}
                 />
                 <div className="profit-kpi-subtext">等待批量发薪结算</div>
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={6}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      处理分润订单数
-                    </span>
-                  }
+                  title="处理分润订单数"
                   value={stats.totalOrders}
-                  prefix={<ProfileOutlined style={{ color: token.colorPrimary }} />}
-                  valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                  prefix={<ProfileOutlined />}
+                  styles={{ content: { fontWeight: 700 } }}
                 />
                 <div className="profit-kpi-subtext">产生分润收益的业务订单</div>
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={6}>
-              <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
+              <Card variant="borderless" className="profit-kpi-card">
                 <Statistic
-                  title={
-                    <span style={{ color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
-                      参与核算员工数
-                    </span>
-                  }
+                  title="参与核算员工数"
                   value={summary.totalMembers}
                   suffix="人"
-                  prefix={<TeamOutlined style={{ color: token.purple }} />}
-                  valueStyle={{ color: token.purple, fontWeight: 700 }}
+                  prefix={<TeamOutlined />}
+                  styles={{ content: { fontWeight: 700 } }}
                 />
                 <div className="profit-kpi-subtext">当期产生薪资记录的成员</div>
               </Card>
@@ -327,7 +291,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           <Card
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <AppstoreOutlined style={{ color: token.colorPrimary }} />
+                <AppstoreOutlined />
                 <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 各分润业务模块金额占比
                 </span>
@@ -366,9 +330,9 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
                           fontSize: 12,
                         }}
                       >
-                        <span style={{ fontWeight: 600, color: token.colorTextSecondary }}>
+                        <Text type="secondary" style={{ fontWeight: 600 }}>
                           {item.name || '分润模块'}
-                        </span>
+                        </Text>
                         <Space size="middle">
                           <span style={{ color: token.colorTextTertiary, fontWeight: 500 }}>{percent}%</span>
                           <span
@@ -401,7 +365,7 @@ export const MonthlyOperationsView: React.FC<MonthlyOperationsViewProps> = ({
           <Card
             title={
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <TrophyOutlined style={{ color: token.colorWarning }} />
+                <TrophyOutlined />
                 <span style={{ fontWeight: 600 }}>
                   {periodDisplay} · 成员创收排行榜 TOP 5
                 </span>

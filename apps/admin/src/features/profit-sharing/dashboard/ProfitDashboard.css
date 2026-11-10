@@ -107,31 +107,6 @@
   box-shadow: var(--ant-box-shadow) !important;
 }
 
-.profit-kpi-card-blue {
-  background: linear-gradient(135deg, var(--ant-blue-1) 0%, var(--ant-color-bg-container) 100%) !important;
-  border-color: var(--ant-blue-2) !important;
-}
-
-.profit-kpi-card-green {
-  background: linear-gradient(135deg, var(--ant-green-1) 0%, var(--ant-color-bg-container) 100%) !important;
-  border-color: var(--ant-green-2) !important;
-}
-
-.profit-kpi-card-amber {
-  background: linear-gradient(135deg, var(--ant-gold-1) 0%, var(--ant-color-bg-container) 100%) !important;
-  border-color: var(--ant-gold-2) !important;
-}
-
-.profit-kpi-card-purple {
-  background: linear-gradient(135deg, var(--ant-purple-1) 0%, var(--ant-color-bg-container) 100%) !important;
-  border-color: var(--ant-purple-2) !important;
-}
-
-.profit-kpi-card-red {
-  background: linear-gradient(135deg, var(--ant-red-1) 0%, var(--ant-color-bg-container) 100%) !important;
-  border-color: var(--ant-red-2) !important;
-}
-
 .profit-kpi-subtext {
   font-size: 12px;
   color: var(--ant-color-text-tertiary);

@@ -404,7 +404,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
         {/* 右侧：对比周期与图表展示模式 */}
         <Space size="middle" align="center" wrap>
           <Space size="small">
-            <span style={{ fontSize: 12, color: token.colorTextSecondary }}>周期：</span>
+            <Text type="secondary" style={{ fontSize: 12 }}>周期：</Text>
             <Segmented
               size="small"
               value={monthsCount}
@@ -445,7 +445,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                 💡 <strong>防过密清晰机制</strong>：企业共有 <strong>{memberSeries.length}</strong>{' '}
                 名成员。当前聚焦对比 <strong>{activeSeries.length}</strong> 位核心成员。
               </span>
-              <span style={{ color: token.colorTextSecondary }}>您可在下方表格中随时勾选任意人员实时增减对比</span>
+              <Text type="secondary">您可在下方表格中随时勾选任意人员实时增减对比</Text>
             </div>
           }
           type="info"
@@ -675,7 +675,7 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                           <span style={{ color: token.colorTextTertiary, fontSize: 11, width: 14 }}>
                             {rank + 1}.
                           </span>
-                          <span style={{ color: token.colorTextSecondary }}>{member.memberName}</span>
+                          <Text type="secondary">{member.memberName}</Text>
                         </span>
                         <span
                           style={{ fontFamily: 'monospace', fontWeight: 600 }}
@@ -736,9 +736,9 @@ export const MultiMemberCompareView: React.FC<MultiMemberCompareViewProps> = ({
                       )}
                     </Space>
                     <Space size="large">
-                      <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+                      <Text type="secondary" style={{ fontSize: 12 }}>
                         月均: ¥{(s.avgMonthlyGross / 100).toFixed(2)}
-                      </span>
+                      </Text>
                       <span
                         style={{
                           fontWeight: 700,

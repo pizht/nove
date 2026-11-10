@@ -99,9 +99,12 @@ export function AliyunSmsFields({
         onOk={() => void sendTest()}
         onCancel={() => setTestOpen(false)}
       >
-        <p className="integrations-test-warning">
-          将真实发送短信并可能产生费用。测试不会创建登录验证码记录。
-        </p>
+        <Alert
+          className="integrations-test-warning"
+          type="warning"
+          showIcon
+          title="将真实发送短信并可能产生费用。测试不会创建登录验证码记录。"
+        />
         <Form form={testForm} layout="vertical" initialValues={{ testCountryCode: '+86' }}>
           <Form.Item label="国家代码" name="testCountryCode" rules={[{ required: true }]}>
             <Input placeholder="+86" />

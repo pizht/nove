@@ -20,6 +20,7 @@ import Alert from 'antd/es/alert';
 import Avatar from 'antd/es/avatar';
 import Button from 'antd/es/button';
 import Checkbox from 'antd/es/checkbox';
+import ConfigProvider from 'antd/es/config-provider';
 import Empty from 'antd/es/empty';
 import Input from 'antd/es/input';
 import message from 'antd/es/message';
@@ -396,7 +397,7 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
             <Popover
               title={
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600 }}>
-                  <InfoCircleOutlined style={{ color: token.colorPrimary }} />
+                  <InfoCircleOutlined />
                   <span>权限判定规则说明</span>
                 </div>
               }
@@ -533,16 +534,36 @@ export function DrivePermissionModal({ node, space, open, onClose }: DrivePermis
             onChange={(e) => setEffect(e.target.value)}
             buttonStyle="solid"
           >
-            <Radio.Button value="ALLOW">
-              <span style={{ color: effect === 'ALLOW' ? token.colorTextLightSolid : token.colorSuccess }}>
+            <ConfigProvider
+              theme={{
+                components: {
+                  Radio: {
+                    buttonSolidCheckedBg: token.colorSuccess,
+                    buttonSolidCheckedHoverBg: token.colorSuccessHover,
+                    buttonSolidCheckedActiveBg: token.colorSuccessActive,
+                  },
+                },
+              }}
+            >
+              <Radio.Button value="ALLOW">
                 <CheckCircleOutlined /> 允许 (ALLOW)
-              </span>
-            </Radio.Button>
-            <Radio.Button value="DENY">
-              <span style={{ color: effect === 'DENY' ? token.colorTextLightSolid : token.colorError }}>
+              </Radio.Button>
+            </ConfigProvider>
+            <ConfigProvider
+              theme={{
+                components: {
+                  Radio: {
+                    buttonSolidCheckedBg: token.colorError,
+                    buttonSolidCheckedHoverBg: token.colorErrorHover,
+                    buttonSolidCheckedActiveBg: token.colorErrorActive,
+                  },
+                },
+              }}
+            >
+              <Radio.Button value="DENY">
                 <StopOutlined /> 显式拒绝 (DENY)
-              </span>
-            </Radio.Button>
+              </Radio.Button>
+            </ConfigProvider>
           </Radio.Group>
         </div>
 

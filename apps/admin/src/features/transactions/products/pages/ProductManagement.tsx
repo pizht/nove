@@ -18,6 +18,7 @@ import Tag from 'antd/es/tag';
 import Tooltip from 'antd/es/tooltip';
 import type { TableProps } from 'antd/es/table';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import dayjs from 'dayjs';
 import type { Dayjs } from 'dayjs';
 import { useMemo, useState } from 'react';
@@ -46,6 +47,8 @@ import type {
   ProductStatus,
   UpdateProduct,
 } from '../types';
+
+const { Text } = Typography;
 
 const { Search, TextArea } = Input;
 
@@ -297,9 +300,9 @@ export function ProductManagement() {
           <ProjectCoverAvatar reference={record.imageUrl} />
           <Space orientation="vertical" size={1}>
             <span style={{ fontWeight: 600 }}>{record.name}</span>
-            <span style={{ color: token.colorTextSecondary, fontFamily: 'monospace', fontSize: 12 }}>
+            <Text type="secondary" style={{ fontFamily: 'monospace', fontSize: 12 }}>
               {record.productCode}
-            </span>
+            </Text>
             {record.shortDescription ? (
               <Tooltip title={record.shortDescription}>
                 <span
@@ -362,9 +365,9 @@ export function ProductManagement() {
       render: (_value: number, record) => (
         <Space orientation="vertical" size={0}>
           <span>销量 {record.salesCount}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+          <Text type="secondary" style={{ fontSize: 12 }}>
             浏览 {record.viewCount} · {record.rating === null ? '暂无评分' : `${record.rating} 分`}
-          </span>
+          </Text>
         </Space>
       ),
     },

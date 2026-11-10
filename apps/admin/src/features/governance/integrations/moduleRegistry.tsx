@@ -11,6 +11,7 @@ import {
   CreditCardOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
+import Badge from 'antd/es/badge';
 import type { ReactNode } from 'react';
 import type { IntegrationSummary, IntegrationModule } from './types';
 
@@ -147,7 +148,7 @@ function menuItem(module: IntegrationModule, summary?: IntegrationSummary) {
     label: (
       <span className="integrations-menu-label">
         <span>{MODULE_META[module].label}</span>
-        <span className={summary?.configured ? 'is-configured' : ''} />
+        <Badge status={summary?.configured ? 'success' : 'default'} />
       </span>
     ),
   };

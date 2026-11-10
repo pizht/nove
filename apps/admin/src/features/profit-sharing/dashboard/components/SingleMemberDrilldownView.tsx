@@ -231,9 +231,9 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
                 {selectedMember.role || '员工'}
               </Tag>
               {selectedMember.department && (
-                <span style={{ fontSize: 12, color: token.colorTextSecondary }}>
+                <Text type="secondary" style={{ fontSize: 12 }}>
                   部门：{selectedMember.department}
-                </span>
+                </Text>
               )}
             </Space>
           )}
@@ -241,7 +241,7 @@ export const SingleMemberDrilldownView: React.FC<SingleMemberDrilldownViewProps>
 
         <Space size="middle" wrap>
           <Space size="small">
-            <span style={{ fontSize: 12, color: token.colorTextSecondary }}>统计周期：</span>
+            <Text type="secondary" style={{ fontSize: 12 }}>统计周期：</Text>
             <Segmented
               size="small"
               value={monthsCount}

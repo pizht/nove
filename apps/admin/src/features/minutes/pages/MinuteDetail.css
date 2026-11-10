@@ -217,18 +217,8 @@
   background: var(--ant-color-fill-quaternary);
 }
 
-.minute-inline-error,
-.minute-inline-note {
+.minute-inline-alert {
   margin: 10px 0;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: var(--ant-color-error-bg);
-  color: var(--ant-red-7);
-}
-
-.minute-inline-note {
-  background: var(--ant-color-fill-tertiary);
-  color: var(--ant-color-text-tertiary);
 }
 
 .minute-info-pane {

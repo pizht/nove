@@ -50,7 +50,7 @@ import type {
 } from '../types';
 
 const { Search, TextArea } = Input;
-const { Link } = Typography;
+const { Link, Text } = Typography;
 const { RangePicker } = DatePicker;
 
 const STATUS_OPTIONS = [
@@ -272,7 +272,7 @@ export function OrderRefundManagement() {
       render: (value: string, record) => (
         <Space direction="vertical" size={2}>
           <span style={{ fontFamily: 'monospace', fontWeight: 600 }}>{value}</span>
-          <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{record.applicantName || '-'}</span>
+          <Text type="secondary" style={{ fontSize: 12 }}>{record.applicantName || '-'}</Text>
         </Space>
       ),
     },
@@ -283,7 +283,7 @@ export function OrderRefundManagement() {
         record.order ? (
           <Space direction="vertical" size={2}>
             <span>{record.order.orderCode}</span>
-            <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>{record.order.orderNumber}</span>
+            <Text type="secondary" style={{ fontSize: 12 }}>{record.order.orderNumber}</Text>
           </Space>
         ) : (
           '-'

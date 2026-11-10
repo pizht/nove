@@ -2,8 +2,12 @@ import Modal from 'antd/es/modal';
 import Button from 'antd/es/button';
 import message from 'antd/es/message';
 import theme from 'antd/es/theme';
+import Alert from 'antd/es/alert';
+import Typography from 'antd/es/typography';
 import { CopyOutlined } from '@ant-design/icons';
 import type { RotateApiKeyResult } from '../types';
+
+const { Paragraph } = Typography;
 
 interface RotateApiKeyModalProps {
   open: boolean;
@@ -41,9 +45,12 @@ export function RotateApiKeyModal({
     >
       {result && (
         <div style={{ padding: '20px 0' }}>
-          <div style={{ marginBottom: 16, color: token.colorError, fontWeight: 500 }}>
-            ⚠️ 请立即复制您的新 API Key，它只会显示这一次！
-          </div>
+          <Alert
+            showIcon
+            type="warning"
+            title="请立即复制您的新 API Key，它只会显示这一次！"
+            style={{ marginBottom: 16 }}
+          />
           <div
             style={{
               padding: 12,
@@ -60,12 +67,12 @@ export function RotateApiKeyModal({
           >
             <span>{result.key}</span>
           </div>
-          <div style={{ marginTop: 16, color: token.colorTextSecondary, fontSize: 12 }}>
+          <Paragraph type="secondary" style={{ marginTop: 16, fontSize: 12 }}>
             <p>• ID: {result.id}</p>
             <p>• 名称: {result.name}</p>
             <p>• 前缀: {result.prefix}</p>
             <p>• 状态: {result.status}</p>
-          </div>
+          </Paragraph>
         </div>
       )}
     </Modal>

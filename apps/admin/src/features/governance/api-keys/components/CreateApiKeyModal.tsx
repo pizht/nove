@@ -5,14 +5,18 @@ import DatePicker from 'antd/es/date-picker';
 import Button from 'antd/es/button';
 import message from 'antd/es/message';
 import Alert from 'antd/es/alert';
+import Result from 'antd/es/result';
+import Typography from 'antd/es/typography';
 import Descriptions from 'antd/es/descriptions';
 import Tag from 'antd/es/tag';
 import theme from 'antd/es/theme';
-import { CheckCircleFilled, CheckOutlined, CopyOutlined } from '@ant-design/icons';
+import { CheckOutlined, CopyOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useAuth } from '../../../../shared/hooks/useAuth';
 import type { CreateApiKeyResult } from '../types';
 import { ScopeSelector } from './ScopeSelector';
+
+const { Text } = Typography;
 
 interface CreateApiKeyModalProps {
   open: boolean;
@@ -95,23 +99,24 @@ export function CreateApiKeyModal({
     >
       {result ? (
         <div style={{ padding: '8px 0 4px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 20 }}>
-            <CheckCircleFilled style={{ color: token.colorSuccess, fontSize: 48 }} />
-            <div style={{ marginTop: 10, fontSize: 20, fontWeight: 600 }}>API Key 创建成功</div>
-            <div style={{ marginTop: 4, color: token.colorTextSecondary }}>现在可以使用此密钥访问已授权的服务</div>
-          </div>
+          <Result
+            status="success"
+            title="API Key 创建成功"
+            subTitle="现在可以使用此密钥访问已授权的服务"
+            style={{ padding: '0 0 20px' }}
+          />
 
           <div
             style={{
               padding: 16,
-              backgroundColor: token.colorPrimaryBg,
-              border: `1px solid ${token.colorPrimaryBorder}`,
+              backgroundColor: token.colorFillTertiary,
+              border: `1px solid ${token.colorBorderSecondary}`,
               borderRadius: 8,
             }}
           >
-            <div style={{ marginBottom: 8, color: token.colorTextSecondary, fontSize: 12, fontWeight: 500 }}>
+            <Text type="secondary" style={{ display: 'block', marginBottom: 8, fontSize: 12, fontWeight: 500 }}>
               API Key
-            </div>
+            </Text>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <code
                 style={{

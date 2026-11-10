@@ -6,6 +6,7 @@ import {
   DeleteOutlined,
   TeamOutlined,
 } from '@ant-design/icons';
+import Alert from 'antd/es/alert';
 import Avatar from 'antd/es/avatar';
 import Button from 'antd/es/button';
 import Card from 'antd/es/card';
@@ -493,10 +494,10 @@ export function MinuteDetail() {
           />
         </div>
         {speakerSummariesError ? (
-          <div className="minute-inline-error">{speakerSummariesError}</div>
+          <Alert className="minute-inline-alert" type="error" showIcon title={speakerSummariesError} />
         ) : null}
         {!canReadSpeakerSummary ? (
-          <div className="minute-inline-note">当前账号没有查看个人总结的权限。</div>
+          <Alert className="minute-inline-alert" type="info" showIcon title="当前账号没有查看个人总结的权限。" />
         ) : null}
         <div className="minute-participant-list">
           {participants.map((participant) => {

@@ -17,6 +17,7 @@ import {
   message,
 } from 'antd';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import { MinusCircleOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import dayjs, { Dayjs } from 'dayjs';
@@ -25,6 +26,8 @@ import { OrderUserSelect } from '../../transactions/orders/components/OrderUserS
 import { OrderProductSelect } from '../../transactions/orders/components/OrderProductSelect';
 import { OrderChannelSelect } from '../../transactions/orders/components/OrderChannelSelect';
 import type { ProfitSharingModule, RuleType, AllocationMode, RuleWritePayload } from './types';
+
+const { Text } = Typography;
 
 const { RangePicker } = DatePicker;
 
@@ -898,9 +901,9 @@ export const RuleForm: React.FC<RuleFormProps> = ({
                           {...restField}
                           name={[name, 'allocationMode']}
                           label={
-                            <span style={{ fontWeight: 500, color: token.colorTextSecondary }}>
+                            <Text type="secondary" style={{ fontWeight: 500 }}>
                               收益人确定方式
-                            </span>
+                            </Text>
                           }
                           style={{ marginBottom: 12 }}
                         >
@@ -1208,7 +1211,8 @@ export const RuleForm: React.FC<RuleFormProps> = ({
             })}
 
             <Button
-              type="dashed"
+              color="primary"
+              variant="dashed"
               onClick={() =>
                 add(
                   ruleType === 'FIXED_MONTHLY'
@@ -1232,7 +1236,7 @@ export const RuleForm: React.FC<RuleFormProps> = ({
               }
               block
               icon={<PlusOutlined />}
-              style={{ height: 44, color: token.colorPrimary, borderColor: token.colorPrimaryBorder, fontWeight: 500 }}
+              style={{ height: 44, fontWeight: 500 }}
             >
               {ruleType === 'FIXED_MONTHLY' ? '添加固定分账款项' : '添加分润模块'}
             </Button>

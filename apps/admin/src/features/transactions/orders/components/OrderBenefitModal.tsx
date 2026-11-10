@@ -157,9 +157,9 @@ export function OrderBenefitModal({ order, open, onClose }: OrderBenefitModalPro
         <Space>
           <ClockCircleOutlined style={{ color: token.colorPrimary }} />
           <span>订单权益调整与冻结记录</span>
-          <span style={{ fontSize: 13, color: token.colorTextSecondary, fontWeight: 'normal' }}>
+          <Text type="secondary" style={{ fontSize: 13, fontWeight: 'normal' }}>
             ({order.orderCode})
-          </span>
+          </Text>
         </Space>
       }
       open={open}

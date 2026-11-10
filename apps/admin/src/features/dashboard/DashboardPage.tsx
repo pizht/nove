@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2026 by LuLab-Team, All Rights Reserved.
  */
-import { Skeleton, Spin } from 'antd';
+import { Skeleton, Spin, Statistic } from 'antd';
 import {
   CalendarOutlined,
   IdcardOutlined,
@@ -33,8 +33,7 @@ interface StatCardProps {
 function StatCard({ label, value, onClick }: StatCardProps) {
   return (
     <div className="dashboard-stat-card" onClick={onClick}>
-      <div className="dashboard-stat-card-label">{label}</div>
-      <div className="dashboard-stat-card-value">{value}</div>
+      <Statistic title={label} value={value} />
     </div>
   );
 }

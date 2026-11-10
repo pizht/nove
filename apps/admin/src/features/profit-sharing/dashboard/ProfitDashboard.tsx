@@ -179,17 +179,13 @@ export const ProfitDashboard: React.FC = () => {
           {activeTab === 'COMPARE' ? (
             <>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        周期内全员发薪总盘
-                      </span>
-                    }
+                    title="周期内全员发薪总盘"
                     value={overall.totalGrossAmount / 100}
                     precision={2}
-                    prefix={<DollarOutlined style={{ color: token.colorPrimary }} />}
-                    valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                    prefix={<DollarOutlined />}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">
                     涵盖近 {monthsCount} 个月全员全部发薪总额
@@ -197,32 +193,24 @@ export const ProfitDashboard: React.FC = () => {
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        全员月均发薪支出
-                      </span>
-                    }
+                    title="全员月均发薪支出"
                     value={overall.avgMonthlyGross / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">全平台月均平稳薪资水平</div>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        创收领先标杆员工
-                      </span>
-                    }
+                    title="创收领先标杆员工"
                     value={memberSeries.length > 0 ? memberSeries[0].memberName : '-'}
-                    prefix={<RiseOutlined style={{ color: token.colorWarning }} />}
-                    valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                    prefix={<RiseOutlined />}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">
                     {memberSeries.length > 0
@@ -232,17 +220,13 @@ export const ProfitDashboard: React.FC = () => {
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        核算覆盖人员规模
-                      </span>
-                    }
+                    title="核算覆盖人员规模"
                     value={memberSeries.length}
                     suffix="人"
-                    prefix={<TeamOutlined style={{ color: token.purple }} />}
-                    valueStyle={{ color: token.purple, fontWeight: 700 }}
+                    prefix={<TeamOutlined />}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">共包含 {members.length} 名在册核算成员</div>
                 </Card>
@@ -251,65 +235,54 @@ export const ProfitDashboard: React.FC = () => {
           ) : (
             <>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-blue">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        该员工周期总实发
-                      </span>
-                    }
+                    title="该员工周期总实发"
                     value={overall.totalGrossAmount / 100}
                     precision={2}
-                    prefix={<DollarOutlined style={{ color: token.colorPrimary }} />}
-                    valueStyle={{ color: token.colorPrimary, fontWeight: 700 }}
+                    prefix={<DollarOutlined />}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">近 {monthsCount} 个月该员工累计发薪总额</div>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-green">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        该员工月均实发
-                      </span>
-                    }
+                    title="该员工月均实发"
                     value={overall.avgMonthlyGross / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.colorSuccess, fontWeight: 700 }}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">月度平均综合薪酬收益</div>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-amber">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        单月最高收入纪录
-                      </span>
-                    }
+                    title="单月最高收入纪录"
                     value={overall.maxMonthlyGross / 100}
                     precision={2}
-                    prefix={<RiseOutlined style={{ color: token.colorWarning }} />}
-                    valueStyle={{ color: token.colorWarning, fontWeight: 700 }}
+                    prefix={<RiseOutlined />}
+                    styles={{ content: { fontWeight: 700 } }}
                   />
                   <div className="profit-kpi-subtext">峰值创收发薪月份记录</div>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
-                <Card bordered={false} className="profit-kpi-card profit-kpi-card-purple">
+                <Card variant="borderless" className="profit-kpi-card">
                   <Statistic
-                    title={
-                      <span style={{ color: token.colorTextSecondary, fontSize: 13, fontWeight: 500 }}>
-                        待结算发放金额
-                      </span>
-                    }
+                    title="待结算发放金额"
                     value={overall.totalPendingAmount / 100}
                     precision={2}
                     prefix="¥"
-                    valueStyle={{ color: token.purple, fontWeight: 700 }}
+                    styles={{
+                      content: {
+                        fontWeight: 700,
+                        ...(overall.totalPendingAmount > 0 && { color: token.colorWarning }),
+                      },
+                    }}
                   />
                   <div className="profit-kpi-subtext">
                     已结清发放: ¥{(overall.totalSettledAmount / 100).toFixed(2)}

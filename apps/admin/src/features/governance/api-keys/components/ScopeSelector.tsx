@@ -5,6 +5,9 @@ import Input from 'antd/es/input';
 import Space from 'antd/es/space';
 import Tag from 'antd/es/tag';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
+
+const { Text } = Typography;
 
 interface ScopeSelectorProps {
   value?: string[];
@@ -90,7 +93,7 @@ export function ScopeSelector({ value = [], onChange, options }: ScopeSelectorPr
 
       <div style={{ padding: '8px 12px', borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
         <Space size={6}>
-          <span style={{ color: token.colorTextSecondary }}>已选择</span>
+          <Text type="secondary">已选择</Text>
           <Tag color="blue" style={{ marginInlineEnd: 0 }}>
             {value.length}
           </Tag>

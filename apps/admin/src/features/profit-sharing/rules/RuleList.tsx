@@ -21,6 +21,7 @@ import {
 } from '@ant-design/icons';
 import { type ColumnsType } from 'antd/es/table';
 import theme from 'antd/es/theme';
+import Typography from 'antd/es/typography';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { ruleApi } from './api/ruleApi';
@@ -28,7 +29,8 @@ import { recordApi } from '../records/api/recordApi';
 import { RuleForm } from './RuleForm';
 import { BatchDuplicateModal } from './BatchDuplicateModal';
 import type { ProfitSharingModule, ProfitSharingRule } from './types';
-import './RuleList.css';
+
+const { Text } = Typography;
 
 export const RuleList: React.FC = () => {
   const { token } = theme.useToken();
@@ -226,9 +228,9 @@ export const RuleList: React.FC = () => {
           return (
             <Space size="small">
               <Tag color="purple">长期有效</Tag>
-              <span style={{ color: token.colorTextSecondary, fontSize: 12 }}>
+              <Text type="secondary" style={{ fontSize: 12 }}>
                 自 {start.format('YYYY-MM-DD')} 起
-              </span>
+              </Text>
             </Space>
           );
         }
@@ -243,9 +245,9 @@ export const RuleList: React.FC = () => {
         }
 
         return (
-          <span style={{ color: token.colorTextSecondary }}>
+          <Text type="secondary">
             {start.format('YYYY-MM-DD')} ~ {end.format('YYYY-MM-DD')}
-          </span>
+          </Text>
         );
       },
     },
@@ -373,7 +375,6 @@ export const RuleList: React.FC = () => {
               <Button
                 type="link"
                 size="small"
-                className="rule-action-btn-calculate"
                 style={{ padding: 0 }}
               >
                 计算
@@ -390,7 +391,7 @@ export const RuleList: React.FC = () => {
                 <Button
                   type="link"
                   size="small"
-                  className="rule-action-btn-disable"
+                  danger
                   style={{ padding: 0 }}
                 >
                   停用
@@ -407,7 +408,6 @@ export const RuleList: React.FC = () => {
                 <Button
                   type="link"
                   size="small"
-                  className="rule-action-btn-enable"
                   style={{ padding: 0 }}
                 >
                   启用

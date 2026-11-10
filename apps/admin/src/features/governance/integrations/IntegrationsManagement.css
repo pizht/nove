@@ -29,17 +29,6 @@
   justify-content: space-between;
 }
 
-.integrations-menu-label > span:last-child {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--ant-color-border);
-}
-
-.integrations-menu-label > span.is-configured {
-  background: var(--ant-color-success);
-}
-
 .integrations-content {
   min-width: 0;
 }
@@ -320,10 +309,6 @@
 
 .integrations-test-warning {
   margin: 0 0 20px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  background: var(--ant-color-warning-bg);
-  color: var(--ant-gold-8);
 }
 
 .integrations-form > .ant-divider-with-text-start .ant-divider-rail-start {
