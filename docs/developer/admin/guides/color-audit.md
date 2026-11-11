@@ -49,7 +49,7 @@
 | `TaskManagement.tsx:498` `lastError` 用 `red7` | 语义对，改 `<Text type="danger">` |
 | `Topbar.tsx:74` 退出确认的 `colorWarning` 图标 | 语义对，但与 `Modal.confirm` 默认图标相同，删掉 `icon` 参数即可 |
 | 悬停 / 选中的 `colorPrimary` / `colorPrimaryBg`（图表 hover、选中行） | 交互态，正确 |
-| `DrivePermissionModal.tsx:399` 信息图标用 `colorPrimary` | 装饰，直接去掉颜色（决策 D4：不需要引入 `colorInfo`） |
+| `DrivePermissionModal.tsx:399` 信息图标用 `colorPrimary` | 静态帮助图标，不由数据 / 状态决定，不满足状态色条件；去掉颜色，跟随文字（决策 D4） |
 
 ### 3 固定色常量（第 ⑤ 类）：保留但收拢
 
@@ -109,7 +109,7 @@
 | D1 | 金额是否着色 | 不考虑国际化，不再讨论红绿习惯差异。按语义判断：**扣除 = 固定指派 `red6`（分类色，不是状态）**；提成、奖金、津贴、底薪是分类，用图表色板；待发 > 0 用 `colorWarning`，已结清用 `colorSuccess`。同一概念在表格、图表、图例、tooltip 中颜色一致。 |
 | D2 | 「停用」按钮 | 用 `danger`；「计算」「启用」不着色。 |
 | D3 | 权限 DENY / ALLOW 单选 | 语义优先：选中 ALLOW 为 success 底，选中 DENY 为 error 底，未选中保持中性。用 `ConfigProvider` 为每个 `Radio.Button` 设置组件 token，去掉 `colorTextLightSolid` 手写文字色。 |
-| D4 | `colorInfo` | **不需要**。主题目前只切换算法、没有自定义种子色，`colorInfo` 与 `colorPrimary` 同为默认蓝，没有视觉差异，现有代码也只有一处图标可能用到。需要「提示」语义时用 `Alert type="info"` / `Tag color="processing"`；将来若自定义品牌主色再评估。 |
+| D4 | `colorInfo` | **列为第四种状态语义**（提示、进行中），与 success / warning / error 适用同样的两条判断；优先用官方组件（`Alert info`、`Tag processing`、`Badge processing` 渲染的就是它），手写元素需要与原生 info 外观一致时才直接使用；不得当作“另一种蓝”，也不用 `colorPrimary` 表达 info。 |
 | D5 | 图表色板 | 已调整：antd 预设色去掉 red，共 12 色按顺序轮流；固定指派的概念（如扣除 → `red6`）先占位。 |
 | D6 | 分类色来源 | 先找语义吻合的 token；没有再用 `@ant-design/colors` 色板，但通过 `token.blue6` / `--ant-blue-6` 取（见 3.4），保证随主题切换。 |
 

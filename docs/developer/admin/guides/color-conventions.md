@@ -132,17 +132,18 @@ antd 的 token 实际分三层，名字越往下越「具体」：
 满足的例子：`待发金额 > 0` 时标 warning、`0` 时标 success；失败的行标 error；被拒绝（DENY）标 error。
 不满足的例子：「单月最高收入」常亮 warning（它不是警告）；「订单提成」画成 success 绿（它不是成功）；「文件夹」图标用 warning 黄（它不是警告）。
 
-**三种语义怎么分：**
+**四种语义怎么分：**
 
 | 语义 | 用在 | 例子 |
 | --- | --- | --- |
 | success | 已完成、已通过、正常 | 已结清、已启用、校验通过 |
 | warning | 待处理、需留意、还可挽回 | 待结算、即将过期、密钥只显示一次 |
 | error | 已失败、被拒绝、不可逆 | 失败、拒绝、删除 |
+| info | 提示、进行中 | 说明性提示、已邀请、待审核、运行中 |
 
-「提示信息（info）」不单独定规则，直接用 `Alert type="info"` 或 `Tag color="processing"`。当前主题没有自定义种子色，`colorInfo` 与 `colorPrimary` 同色（实测均为 `#1677ff`），没有额外价值。
+**info 的用法**：info 与 success、warning、error 一样是状态语义，必须通过上面那两条判断，**不能当作“另一种蓝”**。默认优先用官方组件（`Alert type="info"`、`Tag color="processing"`、`Badge status="processing"`，它们渲染的正是 `colorInfo`）；只有手写元素需要与这些原生 info 外观保持一致时，才使用 `colorInfo` / `colorInfoBg` / `colorInfoBorder`。当前主题没有自定义种子色，`colorInfo` 与 `colorPrimary` 同色（实测均为 `#1677ff`），所以今天没有视觉差异；但将来若自定义主色，原生 info 元素与手写元素仍会保持一致。
 
-**各个变体什么时候用（以 success 为例，warning、error 同理）：**
+**各个变体什么时候用（以 success 为例，warning、error、info 同理）：**
 
 | 角色 | TSX | CSS |
 | --- | --- | --- |
