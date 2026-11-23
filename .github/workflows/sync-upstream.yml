@@ -1,0 +1,29 @@
+name: Sync main from upstream
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # every 12 hours (UTC 00:00 / 12:00)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Force main to match lulabs-org/nove main
+        env:
+          # SYNC_TOKEN (PAT with repo + workflow scopes) is needed when upstream
+          # changes .github/workflows; GITHUB_TOKEN cannot push those files.
+          TOKEN: ${{ secrets.SYNC_TOKEN || github.token }}
+        run: |
+          git init -q repo && cd repo
+          git fetch --no-tags --depth=1 https://github.com/lulabs-org/nove.git main
+          git push --force \
+            "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            FETCH_HEAD:refs/heads/main
